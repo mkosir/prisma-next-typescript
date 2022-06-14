@@ -1,0 +1,45 @@
+{
+  "name": "prisma-next-graphql",
+  "description": "Minimal GraphQL boilerplate with Prisma and Next.js",
+  "version": "0.0.0-development",
+  "scripts": {
+    "start": "npm run x",
+    "lint": "eslint --max-warnings 0 . && npm run tsc",
+    "lint-fix": "eslint --fix .",
+    "lint-staged-husky": "lint-staged",
+    "tsc": "tsc -p tsconfig.dev.json",
+    "format-lint": "prettier --config .prettierrc --check --ignore-unknown .",
+    "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
+    "commit": "git-cz"
+      },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+       "@types/eslint": "^8.4.3",
+   
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+   
+    "commitizen": "^4.2.4",
+
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+
+    "eslint-plugin-import": "^2.26.0",
+  
+  
+    "eslint-plugin-no-array-reduce": "^1.0.60",
+    "eslint-plugin-prettier": "^4.0.0",
+   
+    "husky": "^8.0.1",
+    
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.7.0",
+    "pretty-quick": "^3.1.3",
+   
+   
+    "tsc-files": "^1.1.3",
+   
+    "typescript": "^4.7.3"
+  }
+}
