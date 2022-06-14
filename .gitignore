@@ -1,0 +1,15 @@
+node_modules
+coverage
+dist
+storybook-static
+compiled
+
+.rpt2_cache
+
+npm-debug.log*
+
+.DS_Store
+.env
+*.log
+.vscode
+.idea
