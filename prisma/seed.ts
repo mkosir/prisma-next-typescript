@@ -12,10 +12,9 @@ const users = [
 
 const batches = [
   {
-    email: 'walter.white@admin.com',
-    username: 'Heisenberg',
-    name: 'Walter White',
-    role: 'ADMINISTRATOR',
+    title: 'walter.white@admin.com',
+    description: 'Heisenberg',
+    purity: 99.1,
   },
 ];
 
