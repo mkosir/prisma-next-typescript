@@ -11,8 +11,10 @@ model User {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  email     String?  @unique
-  image     String?
+  email     String   @unique
+  username  String?
+  name      String?
+  imageUrl  String?
   role      Role     @default(APPRENTICE)
   batches   Batch[]
 }
