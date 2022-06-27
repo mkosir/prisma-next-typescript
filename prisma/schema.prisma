@@ -29,6 +29,6 @@ model Batch {
   updatedAt   DateTime @updatedAt
   title       String
   description String
-  category    String
+  purity      Decimal
   users       User[]
 }
