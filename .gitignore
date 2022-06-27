@@ -13,3 +13,10 @@ npm-debug.log*
 *.log
 .vscode
 .idea
+
+/.next/
+/out/
+
+/build
+
+*.tsbuildinfo
