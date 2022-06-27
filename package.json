@@ -3,7 +3,9 @@
   "description": "Minimal GraphQL boilerplate with Prisma and Next.js",
   "version": "0.0.0-development",
   "scripts": {
-    "start": "npm run x",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint --max-warnings 0 . && npm run tsc",
     "lint-fix": "eslint --fix .",
     "lint-staged-husky": "lint-staged",
@@ -12,10 +14,18 @@
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
     "commit": "git-cz"
   },
+  "dependencies": {
+    "next": "12.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@types/eslint": "^8.4.3",
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "commitizen": "^4.2.4",
