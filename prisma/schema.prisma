@@ -6,3 +6,29 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String?  @unique
+  image     String?
+  role      Role     @default(APPRENTICE)
+  batches   Batch[]
+}
+
+enum Role {
+  APPRENTICE
+  SUPERVISOR
+  ADMINISTRATOR
+}
+
+model Batch {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  title       String
+  description String
+  category    String
+  users       User[]
+}
