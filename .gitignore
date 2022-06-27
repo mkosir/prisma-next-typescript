@@ -20,3 +20,6 @@ npm-debug.log*
 /build
 
 *.tsbuildinfo
+
+database/*
+!database/.gitkeep 
