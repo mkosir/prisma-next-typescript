@@ -13,10 +13,10 @@
     "format-lint": "prettier --config .prettierrc --check --ignore-unknown .",
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
     "commit": "git-cz",
+    "docker-dev": "docker-compose up",
     "db-migration-run": "npx prisma migrate dev",
     "db-seed": "ts-node --project tsconfigs/tsconfig.prisma-seed.json prisma/seed.ts",
-    "docker-dev": "docker-compose up",
-    "docker-test": "docker-compose"
+    "db-view": "npx prisma studio"
   },
   "dependencies": {
     "next": "12.2.0",
