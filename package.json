@@ -14,7 +14,7 @@
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
     "commit": "git-cz",
     "db-migration-run": "npx prisma migrate dev",
-    "db-seed": "ts-node prisma/seed.ts",
+    "db-seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts",
     "docker-dev": "docker-compose up",
     "docker-test": "docker-compose"
   },
