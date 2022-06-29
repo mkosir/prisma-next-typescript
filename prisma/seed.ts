@@ -1,8 +1,13 @@
 import { PrismaClient, User } from '@prisma/client';
 
-// const users: User[] = [
-const users = [
+const users: User[] = [
   {
+    //
+    id: 'dd',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    imageUrl: '',
+    //
     email: 'walter.white@admin.com',
     username: 'Heisenberg',
     name: 'Walter White',
@@ -21,9 +26,7 @@ const batches = [
 const prisma = new PrismaClient();
 
 async function main() {
-  await prisma.user.create({
-    data: users,
-  });
+  await prisma.user.createMany({ data: users });
 
   // await prisma.batch.createMany({
   //   data: batches,
