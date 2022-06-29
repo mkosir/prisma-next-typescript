@@ -15,6 +15,12 @@ Boilerplate with focus on best practices and painless developer experience:
 - [Node v18+](https://nodejs.org/)
 - [Docker](https://www.docker.com/)
 
+## Features:
+
+- [Prisma v4](https://www.prisma.io/) ORM
+- [TypeScript v4](https://github.com/microsoft/TypeScript) codebase
+- [NextJs](https://github.com/vercel/next.js) framework for building GraphQL
+
 ## Contributing
 
 All contributions are welcome!
