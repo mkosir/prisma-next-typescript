@@ -12,8 +12,8 @@ const users = [
 
 const batches = [
   {
-    title: 'walter.white@admin.com',
-    description: 'Heisenberg',
+    title: 'Blue Sky',
+    description: 'summer batch',
     purity: 99.1,
   },
 ];
