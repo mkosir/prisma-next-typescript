@@ -11,3 +11,12 @@ services:
       - '5432:5432'
     volumes:
       - ./database/boilerplate:/var/lib/postgresql/data/
+
+  init_db:
+    container_name: 'init_db'
+    image: 'node:18.4-alpine'
+    entrypoint: /bin/sh './scripts/db-init.sh'
+    volumes: 
+     - ./scripts:/scripts
+    depends_on:
+      - db_postgres
