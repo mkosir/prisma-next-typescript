@@ -9,7 +9,6 @@ compiled
 npm-debug.log*
 
 .DS_Store
-.env
 *.log
 .vscode
 .idea
@@ -23,3 +22,7 @@ npm-debug.log*
 
 database/*
 !database/.gitkeep 
+
+# keep config folder with env files ONLY for demo purposes
+# config/
+# .env
