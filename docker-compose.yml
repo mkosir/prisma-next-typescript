@@ -11,3 +11,4 @@ services:
       - '5432:5432'
     volumes:
       - ./database/boilerplate:/var/lib/postgresql/data/
+      - ./scripts/db-init:/docker-entrypoint-initdb.d # all files in directory automatically executed in the alphabetical order on container creation
