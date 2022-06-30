@@ -15,7 +15,8 @@
     "commit": "git-cz",
     "db-start": "docker-compose up",
     "db-view": "npx prisma studio",
-    "db-migration-run": "npx prisma migrate dev",
+    "db-migration-generate": "npx prisma migrate dev",
+    "db-migration-run": "npx prisma migrate deploy",
     "db-seed": "ts-node --project tsconfigs/tsconfig.prisma-seed.json prisma/seed.ts"
   },
   "dependencies": {
