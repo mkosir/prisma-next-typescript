@@ -6,7 +6,7 @@ services:
     image: 'postgres:14.4-alpine'
     restart: always
     env_file:
-      - envs/.env.dev
+      - envs/dev.env
     ports:
       - '5432:5432'
     volumes:
@@ -16,7 +16,7 @@ services:
     container_name: 'db_init'
     image: 'node:18.4-alpine'
     env_file:
-      - envs/.env.db-init
+      - envs/db-init.env
     entrypoint: /bin/sh './app/scripts/db-init.sh'
     volumes: 
      - .:/app
