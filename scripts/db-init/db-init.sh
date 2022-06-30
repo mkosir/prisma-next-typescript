@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "Install npm"
+apk add --update node
+
 echo "### Database initialization - Start ###"
 echo "Running migrartions..."
 npm run db-migration-run
