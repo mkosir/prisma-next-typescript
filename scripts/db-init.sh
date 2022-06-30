@@ -9,7 +9,7 @@ apk add --update bash
 
 echo "### Database initialization - Start ###"
 echo "Running migrartions..."
-npm run db-migration-run
+npx prisma migrate deploy
 echo "Running seeds..."
-# npm run db-seed-run
+# ts-node --project tsconfigs/tsconfig.prisma-seed.json prisma/seed.ts
 echo "### Database initialization - End ###"
