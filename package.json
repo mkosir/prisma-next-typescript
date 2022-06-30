@@ -13,7 +13,7 @@
     "format-lint": "prettier --config .prettierrc --check --ignore-unknown .",
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
     "commit": "git-cz",
-    "db-start": "docker-compose up",
+    "db-start": "chmod -R +x scripts && docker-compose up",
     "db-view": "npx prisma studio",
     "db-migration-generate": "npx prisma migrate dev",
     "db-migration-run": "npx prisma migrate deploy",
