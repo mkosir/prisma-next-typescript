@@ -23,6 +23,5 @@ npm-debug.log*
 database/*
 !database/.gitkeep 
 
-# keep config folder with env files ONLY for demo purposes
-# config/
-# .env
+# keep folder with *.env files in Git ONLY for demo purposes
+# envs/
