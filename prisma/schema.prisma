@@ -30,7 +30,7 @@ model Batch {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   title       String
-  description String
+  description String?
   purity      Decimal
   users       User[]
 }
