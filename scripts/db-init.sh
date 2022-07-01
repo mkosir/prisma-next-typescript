@@ -12,5 +12,6 @@ export ENV=db-init
 echo "Running migrartions..."
 npm run db-migration-run
 echo "Running seeds..."
+npx prisma generate # support Prisma query engine in Alpine for seeding
 npm run db-seed-run
 echo "### Database initialization - End ###"
