@@ -8,7 +8,7 @@ apk add --update bash
 ./scripts/wait-for-it.sh $PG_HOST:5432 --timeout=30 --strict -- echo "postgres up and running"
 
 echo "### Database initialization - Start ###"
-ENV=db-init
+export ENV=db-init
 echo "Running migrartions..."
 npm run db-migration-run
 echo "Running seeds..."
