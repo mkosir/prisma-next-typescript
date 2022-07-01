@@ -12,8 +12,8 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email     String   @unique
+  name      String
   username  String?
-  name      String?
   imageUrl  String?
   role      Role     @default(APPRENTICE)
   batches   Batch[]
