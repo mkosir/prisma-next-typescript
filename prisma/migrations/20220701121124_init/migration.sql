@@ -7,8 +7,8 @@ CREATE TABLE "User" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "email" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
     "username" TEXT,
-    "name" TEXT,
     "imageUrl" TEXT,
     "role" "Role" NOT NULL DEFAULT 'APPRENTICE',
 
