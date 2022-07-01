@@ -8,8 +8,9 @@ apk add --update bash
 ./scripts/wait-for-it.sh $PG_HOST:5432 --timeout=30 --strict -- echo "postgres up and running"
 
 echo "### Database initialization - Start ###"
+ENV=db-init
 echo "Running migrartions..."
-npx prisma migrate deploy
+npm run db-migration-run
 echo "Running seeds..."
-# ts-node --project tsconfigs/tsconfig.prisma-seed.json prisma/seed.ts
+npm run db-seed-run
 echo "### Database initialization - End ###"
