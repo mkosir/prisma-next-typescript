@@ -9,8 +9,8 @@ const users: User[] = [
     imageUrl: '',
     //
     email: 'walter.white@admin.com',
-    username: 'Heisenberg',
     name: 'Walter White',
+    username: 'Heisenberg',
     role: 'ADMINISTRATOR',
   },
 ];
