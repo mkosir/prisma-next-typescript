@@ -20,6 +20,7 @@ model User {
 }
 
 enum Role {
+  STANDARD
   APPRENTICE
   SUPERVISOR
   ADMINISTRATOR
