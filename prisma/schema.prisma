@@ -38,9 +38,9 @@ model Batch {
 }
 
 model UserBatch {
-  user    User   @relation(fields: [userId], references: [id])
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId  String
-  batch   Batch  @relation(fields: [batchId], references: [id])
+  batch   Batch  @relation(fields: [batchId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   batchId String
 
   @@id([userId, batchId])
