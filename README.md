@@ -20,7 +20,7 @@ Boilerplate with focus on best practices and painless developer experience:
 _Easily set up a local development environment_
 
 - clone the repo
-- `npm run db-start` - Creates Postgres database container instance seeded with Breaking Bad characters and batches 💊 (default credentials `user=walter`, `password=white` in [.env file](./envs/.env))
+- `npm run db-start` - Creates Postgres database container instance seeded with Breaking Bad characters and batches 💊 (default credentials `user=walter`, `password=white` in [.env file](./envs/dev.env))
 - `npm run dev` - Start NextJs 🚀
 
 Visit [localhost:3000](http://localhost:3000/)
