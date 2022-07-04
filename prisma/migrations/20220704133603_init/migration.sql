@@ -29,22 +29,18 @@ CREATE TABLE "Batch" (
 );
 
 -- CreateTable
-CREATE TABLE "_BatchToUser" (
-    "A" TEXT NOT NULL,
-    "B" TEXT NOT NULL
+CREATE TABLE "UserBatch" (
+    "userId" TEXT NOT NULL,
+    "batchId" TEXT NOT NULL,
+
+    CONSTRAINT "UserBatch_pkey" PRIMARY KEY ("userId","batchId")
 );
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
--- CreateIndex
-CREATE UNIQUE INDEX "_BatchToUser_AB_unique" ON "_BatchToUser"("A", "B");
-
--- CreateIndex
-CREATE INDEX "_BatchToUser_B_index" ON "_BatchToUser"("B");
+-- AddForeignKey
+ALTER TABLE "UserBatch" ADD CONSTRAINT "UserBatch_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_BatchToUser" ADD CONSTRAINT "_BatchToUser_A_fkey" FOREIGN KEY ("A") REFERENCES "Batch"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "_BatchToUser" ADD CONSTRAINT "_BatchToUser_B_fkey" FOREIGN KEY ("B") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "UserBatch" ADD CONSTRAINT "UserBatch_batchId_fkey" FOREIGN KEY ("batchId") REFERENCES "Batch"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
