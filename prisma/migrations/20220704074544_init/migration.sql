@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "Role" AS ENUM ('APPRENTICE', 'SUPERVISOR', 'ADMINISTRATOR');
+CREATE TYPE "Role" AS ENUM ('STANDARD', 'APPRENTICE', 'SUPERVISOR', 'ADMINISTRATOR');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -21,7 +21,7 @@ CREATE TABLE "Batch" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "title" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
+    "description" TEXT,
     "purity" DECIMAL(65,30) NOT NULL,
 
     CONSTRAINT "Batch_pkey" PRIMARY KEY ("id")
