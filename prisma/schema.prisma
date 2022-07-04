@@ -33,5 +33,6 @@ model Batch {
   title       String
   description String?
   purity      Decimal
+  weight      Decimal
   users       User[]
 }

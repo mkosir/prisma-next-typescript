@@ -6,10 +6,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   await prisma.user.createMany<{ data: Prisma.UserCreateInput[] }>({ data: users });
-
-  // await prisma.batch.createMany({
-  //   data: batches,
-  // });
+  await prisma.batch.createMany<{ data: Prisma.BatchCreateInput[] }>({ data: batches });
 }
 
 main()
