@@ -7,13 +7,23 @@
 Boilerplate with focus on best practices and painless developer experience:
 
 - Minimal setup that can be extended 🔧
-- Spin it up with single command 🌀
-- TypeScript first
+- Easily spin up local dev environment 🌀
+- End to end type safety with TypeScript
 
 ## Requirements
 
 - [Node v18+](https://nodejs.org/)
 - [Docker](https://www.docker.com/)
+
+## Running
+
+_Easily set up a local development environment_
+
+- clone the repo
+- `npm run db-start` - Postgres database container seeded with 💊 Breaking Bad characters and produced batches in `Users` table (default credentials `user=walter`, `password=white` in [.env file](./envs/.env))
+- `npm run dev` - Start NextJs 🚀
+
+Visit [localhost:3000](http://localhost:3000/)
 
 ## Features:
 
