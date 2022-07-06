@@ -21,11 +21,11 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
 
       # - name: Install dependencies 🔧
-        # if: steps.cache.outputs.cache-hit != 'true'
-        # run: npm ci
+      # if: steps.cache.outputs.cache-hit != 'true'
+      # run: npm ci
 
       # - name: Lint ✅
-        # run: npm run lint
+      # run: npm run lint
 
       # - name: Build 🏗️
-        # run: npm run build
+      # run: npm run build
