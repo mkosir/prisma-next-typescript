@@ -1,4 +1,5 @@
 import { Prisma } from '@prisma/client';
+
 import { userJessePinkmanId, userWalterWhiteId } from './users';
 
 export const batches: Prisma.BatchCreateInput[] = [

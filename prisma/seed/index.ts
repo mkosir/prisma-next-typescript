@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+
 import { batches } from './batches';
 import { users } from './users';
 
@@ -9,7 +10,7 @@ async function main() {
 
   // Nested relations not supported using createMany -  https://github.com/prisma/prisma/issues/5455
   // await prisma.batch.createMany<{ data: Prisma.BatchCreateInput[] }>({ data: batches });
-  for (let batch of batches) {
+  for (const batch of batches) {
     await prisma.batch.create({ data: batch });
   }
 }
