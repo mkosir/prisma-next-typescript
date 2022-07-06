@@ -1,0 +1,11 @@
+{
+  "*": [
+    "pretty-quick --staged"
+  ],
+  "*.{js,jsx,ts,tsx}": [
+    "eslint --max-warnings 0"
+  ],
+  "*.{ts,tsx}": [
+    "tsc-files --noEmit -p tsconfig/tsconfig.dev.json"
+  ]
+}
