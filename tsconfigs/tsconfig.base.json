@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "outDir": "compiled",
+    "outDir": "../compiled",
     // "baseUrl": "src",
     // "paths": {
     //   ".": ["."]
