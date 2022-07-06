@@ -18,8 +18,8 @@ services:
     env_file:
       - envs/db-init.env
     entrypoint: /bin/sh './app/scripts/db-init.sh'
-    volumes: 
-     - .:/app
+    volumes:
+      - .:/app
     depends_on:
       - db_postgres
     links:
