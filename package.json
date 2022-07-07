@@ -44,7 +44,6 @@
     "commitizen": "^4.2.4",
     "dotenv": "^16.0.1",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.2.4",
     "eslint-plugin-import": "^2.26.0",
