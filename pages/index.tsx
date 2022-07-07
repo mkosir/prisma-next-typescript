@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Prisma/Next.js/TypeScript Boilerplate</title>
         <meta name="description" content="💊 Minimal GraphQL boilerplate with Prisma and Next.js" />
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
