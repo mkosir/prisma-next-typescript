@@ -3,7 +3,7 @@
   "description": "Minimal GraphQL boilerplate with Prisma and Next.js",
   "version": "0.0.0-development",
   "scripts": {
-    "dev": "next dev",
+    "dev": "env-cmd -f envs/dev.env next dev",
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
