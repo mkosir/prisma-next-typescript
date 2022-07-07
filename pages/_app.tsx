@@ -1,8 +1,19 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+import '../styles/globals.css';
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <Head>
+        <title>Prisma/Next.js/TypeScript Boilerplate</title>
+        <meta name="description" content="💊 Minimal GraphQL boilerplate with Prisma and Next.js" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
+};
 
 export default MyApp;

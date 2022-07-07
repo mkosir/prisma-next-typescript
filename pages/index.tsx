@@ -1,5 +1,4 @@
 import type { InferGetServerSidePropsType } from 'next';
-import Head from 'next/head';
 
 import prisma from '../prisma/prismaClient';
 import styles from '../styles/Home.module.css';
@@ -9,12 +8,6 @@ const Home = ({ users }: ServerSideProps) => {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Prisma/Next.js/TypeScript Boilerplate</title>
-        <meta name="description" content="💊 Minimal GraphQL boilerplate with Prisma and Next.js" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
