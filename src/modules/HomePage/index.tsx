@@ -1,11 +1,12 @@
 import styles from 'common/styles/Home.module.css';
-import { ServerSidePropsHome } from 'pages';
 
-export const HomePage = ({ users }: ServerSidePropsHome) => {
-  console.log('🔎 Log ~ users', users);
-
+export const HomePage = () => {
   return (
     <div className={styles.container}>
+      <ul>
+        <li>Users</li>
+        <li>Batches</li>
+      </ul>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
