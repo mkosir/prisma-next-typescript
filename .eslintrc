@@ -23,6 +23,8 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
 
+    "jsx-a11y/anchor-is-valid": ["off"],
+
     // Import
     "import/no-default-export": "error",
     "import/order": [
