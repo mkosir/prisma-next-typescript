@@ -21,7 +21,7 @@
     "db-migration-run-dev": "ENV=dev npm run db-migration-run",
     "db-migration-run-stage": "ENV=stage npm run db-migration-run",
     "db-migration-run-prod": "ENV=prod npm run db-migration-run",
-    "db-seed-run": "env-cmd -f envs/${ENV}.env ts-node --project tsconfigs/tsconfig.prisma-seed.json prisma/seed/index.ts",
+    "db-seed-run": "env-cmd -f envs/${ENV}.env ts-node --project tsconfigs/tsconfig.prisma-seed.json src/prisma/seed/index.ts",
     "db-seed-run-dev": "ENV=dev npm run db-seed-run",
     "db-reset": "env-cmd -f envs/${ENV}.env npx prisma migrate reset -f",
     "db-reset-dev": "ENV=dev npm run db-reset"
