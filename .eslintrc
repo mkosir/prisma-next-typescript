@@ -41,6 +41,12 @@
 
   "overrides": [
     {
+      "files": ["ProcessEnv.d.ts"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off"
+      }
+    },
+    {
       "files": ["pages/**/*"],
       "rules": {
         "import/no-default-export": "off"
