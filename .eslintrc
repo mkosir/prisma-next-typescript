@@ -46,7 +46,7 @@
       }
     },
     {
-      "files": ["pages/**/*"],
+      "files": ["src/pages/**/*"],
       "rules": {
         "import/no-default-export": "off"
       }
