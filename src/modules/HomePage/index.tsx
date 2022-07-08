@@ -1,8 +1,8 @@
-import styles from 'common/styles/Home.module.css';
+import styles from './index.module.css';
 
 export const HomePage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <ul>
         <li>Users</li>
         <li>Batches</li>
