@@ -1,8 +1,7 @@
 import type { InferGetServerSidePropsType } from 'next';
 
 import { UsersPage } from 'modules/UsersPage';
-
-import prisma from '../../prisma/prismaClient';
+import prisma from 'prisma/prismaClient';
 
 export type ServerSidePropsUsers = InferGetServerSidePropsType<typeof getServerSideProps>;
 

@@ -1,8 +1,7 @@
 import type { InferGetServerSidePropsType } from 'next';
 
 import { BatchesPage } from 'modules/BatchesPage';
-
-import prisma from '../../prisma/prismaClient';
+import prisma from 'prisma/prismaClient';
 
 export type ServerSidePropsBatches = InferGetServerSidePropsType<typeof getServerSideProps>;
 
