@@ -2,10 +2,10 @@
   "compilerOptions": {
     "noEmit": true,
     "outDir": "../compiled",
-    // "baseUrl": "src",
-    // "paths": {
-    //   ".": ["."]
-    // },
+    "baseUrl": "../src",
+    "paths": {
+      ".": ["."]
+    },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "strict": true,
