@@ -1,9 +1,7 @@
-import type { InferGetServerSidePropsType } from 'next';
+import styles from 'common/styles/Home.module.css';
+import { ServerSidePropsHome } from 'pages';
 
-import prisma from '../prisma/prismaClient';
-import styles from '../styles/Home.module.css';
-
-const Home = ({ users }: ServerSideProps) => {
+export const HomePage = ({ users }: ServerSidePropsHome) => {
   console.log('🔎 Log ~ users', users);
 
   return (
@@ -31,20 +29,4 @@ const Home = ({ users }: ServerSideProps) => {
       </main>
     </div>
   );
-};
-
-export default Home;
-
-type ServerSideProps = InferGetServerSidePropsType<typeof getServerSideProps>;
-
-export const getServerSideProps = async () => {
-  const users = await prisma.user.findMany({
-    include: {
-      batches: true,
-    },
-  });
-
-  return {
-    props: { users: JSON.parse(JSON.stringify(users)) as typeof users },
-  };
 };
