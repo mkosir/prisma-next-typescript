@@ -22,8 +22,8 @@ CREATE TABLE "Batch" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT,
-    "purity" DECIMAL(65,30) NOT NULL,
-    "weight" DECIMAL(65,30) NOT NULL,
+    "purity" DECIMAL(5,2) NOT NULL,
+    "weight" DECIMAL(10,2) NOT NULL,
     "supplierId" TEXT NOT NULL,
 
     CONSTRAINT "Batch_pkey" PRIMARY KEY ("id")

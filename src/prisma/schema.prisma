@@ -32,8 +32,8 @@ model Batch {
   updatedAt   DateTime @updatedAt
   title       String
   description String?
-  purity      Decimal
-  weight      Decimal
+  purity      Decimal  @db.Decimal(5, 2)
+  weight      Decimal  @db.Decimal(10, 2)
   users       User[]
   supplier    Supplier @relation(fields: [supplierId], references: [id])
   supplierId  String
