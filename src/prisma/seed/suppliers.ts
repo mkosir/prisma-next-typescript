@@ -7,7 +7,7 @@ export const suppliers: Prisma.SupplierCreateInput[] = [
   {
     id: supplierIdGoldenMothChemical,
     name: 'Golden Moth Chemical',
-    description: "The company's logo is a stylized golden bee",
+    description: "The company's logo is a golden bee",
   },
   {
     id: supplierIdGoldenMothChemical,
