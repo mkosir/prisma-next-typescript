@@ -11,6 +11,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="💊 Minimal GraphQL boilerplate with Prisma and Next.js" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>
+        Minimal GraphQL boilerplate with Prisma, Next.js and TypeScript 💊
+      </h2>
       <Component {...pageProps} />
     </>
   );
