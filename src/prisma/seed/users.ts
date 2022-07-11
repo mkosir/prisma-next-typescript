@@ -1,18 +1,18 @@
 import { Prisma } from '@prisma/client';
 
-export const userWalterWhiteId = '1f008731-4645-43de-8af9-3060d4086001';
-export const userJessePinkmanId = '1f008731-4645-43de-8af9-3060d4086002';
+export const userIdWalterWhite = '1f008731-4645-43de-8af9-3060d4086001';
+export const userIdJessePinkman = '1f008731-4645-43de-8af9-3060d4086002';
 
 export const users: Prisma.UserCreateInput[] = [
   {
-    id: userWalterWhiteId,
+    id: userIdWalterWhite,
     email: 'walter.white@mail.com',
     name: 'Walter White',
     username: 'Heisenberg',
     role: 'ADMINISTRATOR',
   },
   {
-    id: userJessePinkmanId,
+    id: userIdJessePinkman,
     email: 'jesse.pinkman@mail.com',
     name: 'Jesse Pinkman',
     username: 'Jesse',
