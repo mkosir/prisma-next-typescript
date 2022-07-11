@@ -8,15 +8,15 @@ datasource db {
 }
 
 model User {
-  id        String      @id @default(uuid())
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-  email     String      @unique
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String   @unique
   name      String
   username  String?
   imageUrl  String?
-  role      Role        @default(APPRENTICE)
-  batches   UserBatch[]
+  role      Role     @default(STANDARD)
+  batches   Batch[]
 }
 
 enum Role {
@@ -27,21 +27,23 @@ enum Role {
 }
 
 model Batch {
-  id          String      @id @default(uuid())
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
   title       String
   description String?
   purity      Decimal
   weight      Decimal
-  users       UserBatch[]
+  users       User[]
+  supplier    Supplier @relation(fields: [supplierId], references: [id])
+  supplierId  String
 }
 
-model UserBatch {
-  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  userId  String
-  batch   Batch  @relation(fields: [batchId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  batchId String
-
-  @@id([userId, batchId])
+model Supplier {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  description String?
+  batches     Batch[]
 }
