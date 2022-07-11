@@ -1,13 +1,14 @@
 import { ServerSidePropsBatches } from 'pages/batches';
 
-export const BatchesPage = ({ batches }: ServerSidePropsBatches) => {
-  console.log('🔎 Log ~ batches', batches);
+import { BatchRow } from './components';
 
+export const BatchesPage = ({ batches }: ServerSidePropsBatches) => {
   return (
     <div>
       <h3>💊 Batches</h3>
+      <div style={{ paddingBottom: '10px', fontStyle: 'italic' }}>Total No. of batches: {batches.length}</div>
       {batches.map((batch) => (
-        <div key={batch.id}>{batch.title}</div>
+        <BatchRow key={batch.id} batch={batch} />
       ))}
     </div>
   );
