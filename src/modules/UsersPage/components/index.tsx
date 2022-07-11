@@ -11,8 +11,8 @@ export type UserRowProps = {
 
 export const UserRow = ({ user }: UserRowProps) => {
   const purities = user.batches.map((batch) => batch.purity);
-  const purityBest = purities.length ? Prisma.Decimal.max(...purities).toNumber() : '-';
-  const purityAverage = purities.length ? Prisma.Decimal.sum(...purities).toNumber() : '-';
+  const purityBest = purities.length ? `${Prisma.Decimal.max(...purities).toNumber()}%` : '-';
+  const purityAverage = purities.length ? `${Prisma.Decimal.sum(...purities).toNumber()}%` : '-';
 
   return (
     <div>

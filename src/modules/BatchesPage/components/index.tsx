@@ -1,3 +1,5 @@
+import { Prisma } from '@prisma/client';
+
 import { ServerSidePropsBatches } from 'pages/batches';
 
 type Batches = ServerSidePropsBatches['batches'];
@@ -10,7 +12,8 @@ export type BatchRowProps = {
 export const BatchRow = ({ batch }: BatchRowProps) => {
   return (
     <div>
-      {batch.title} | {batch.description} | {batch.purity.toNumber()} | {batch.weight.toNumber()}
+      {batch.title} | {batch.description} | {new Prisma.Decimal(batch.purity).toNumber()}% |
+      {new Prisma.Decimal(batch.weight).toNumber()}kg
     </div>
   );
 };
