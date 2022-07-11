@@ -9,7 +9,7 @@ export type UserRowProps = {
   user: User;
 };
 
-export const UserRow = ({ user }: UserRowProps) => {
+export const UserCard = ({ user }: UserRowProps) => {
   const purities = user.batches.map((batch) => batch.purity);
   const purityBest = purities.length ? `${Prisma.Decimal.max(...purities).toNumber()}%` : '-';
   const purityAverage = purities.length ? `${Prisma.Decimal.sum(...purities).toNumber()}%` : '-';
