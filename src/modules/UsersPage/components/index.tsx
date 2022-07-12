@@ -1,6 +1,7 @@
 import { Prisma } from '@prisma/client';
 import Tilt from 'react-parallax-tilt';
 
+import { Link } from 'common/components/Link';
 import { ServerSidePropsUsers } from 'pages/users';
 
 type Users = ServerSidePropsUsers['users'];
@@ -8,10 +9,9 @@ type User = Users[number];
 
 export type UserCardProps = {
   user: User;
-  onUserSelected: (userId: string) => void;
 };
 
-export const UserCard = ({ user, onUserSelected }: UserCardProps) => {
+export const UserCard = ({ user }: UserCardProps) => {
   const purities = user.batches.map((batch) => batch.purity);
   const purityBest = purities.length ? `${Prisma.Decimal.max(...purities).toNumber()}%` : '-';
   const purityAverage = purities.length
@@ -20,39 +20,34 @@ export const UserCard = ({ user, onUserSelected }: UserCardProps) => {
 
   return (
     <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} style={{ maxWidth: '400px' }}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          backgroundColor: 'rgba(172, 201, 243, 0.07)',
-          margin: '10px 0',
-          padding: '15px',
-          borderRadius: '5px',
-          boxShadow: '0 4px 8px 0 rgba(13, 99, 220, 0.13)',
-          cursor: 'pointer',
-        }}
-        role="button"
-        tabIndex={0}
-        onClick={() => onUserSelected(user.id)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            onUserSelected(user.id);
-          }
-        }}
-      >
-        <div>
-          <div>
-            {user.name} - {user.username}
+      <Link linkNextProps={{ href: `users/${user.id}` }} isUnStyled>
+        <a style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              backgroundColor: 'rgba(172, 201, 243, 0.07)',
+              margin: '10px 0',
+              padding: '15px',
+              borderRadius: '5px',
+              boxShadow: '0 4px 8px 0 rgba(13, 99, 220, 0.13)',
+            }}
+          >
+            <div>
+              <div>
+                {user.name} - {user.username}
+              </div>
+              <div>Current role: {user.role.toLowerCase()}</div>
+              <div>
+                <li>Cooked {user.batches.length} batches</li>
+                <li>Best purity {purityBest}</li>
+                <li>Average purity {purityAverage}</li>
+              </div>
+            </div>
+            <img src={user.imageUrl ?? '/no-user.jpg'} alt="user" width={85} style={{ borderRadius: '4px' }} />
           </div>
-          <div>Current role: {user.role.toLowerCase()}</div>
-          <div>
-            <li>Cooked {user.batches.length} batches</li>
-            <li>Best purity {purityBest}</li>
-            <li>Average purity {purityAverage}</li>
-          </div>
-        </div>
-        <img src={user.imageUrl ?? '/no-user.jpg'} alt="user" width={85} style={{ borderRadius: '4px' }} />
-      </div>
+        </a>
+      </Link>
     </Tilt>
   );
 };
