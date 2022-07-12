@@ -1,4 +1,4 @@
-import { Link } from 'common/components/Link';
+import { Link } from 'common/components';
 
 export const HomePage = () => {
   return (

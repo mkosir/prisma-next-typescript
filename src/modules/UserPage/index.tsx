@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client';
 
-import { Table } from 'common/components/Table';
+import { Table } from 'common/components';
 import { ServerSidePropsUser } from 'pages/users/[id]';
 
 export const UserPage = ({ userId, user }: ServerSidePropsUser) => {
@@ -34,27 +34,24 @@ export const UserPage = ({ userId, user }: ServerSidePropsUser) => {
           </>,
         ]}
       />
-      Batches Cooked
-      {/* <table style={{ textAlign: 'left', borderCollapse: 'collapse', width: '100%' }}>
-        <tbody>
-          <tr>
-            {Object.keys(Prisma.BatchScalarFieldEnum).map((columnName) => (
-              <th key={columnName}>{columnName}</th>
-            ))}
-          </tr>
-          <tr>
-            <td>{user.batches.}</td>
-            <td>{user.createdAt.toString()}</td>
-            <td>{user.updatedAt.toString()}</td>
-            <td>{user.email}</td>
-            <td>{user.name}</td>
-            <td>{user.username}</td>
-            <td>{user.imageUrl}</td>
-            <td>{user.role}</td>
-            <td>{.toString()}</td>
-          </tr>
-        </tbody>
-      </table> */}
+      <h4>Batches Cooked</h4>
+      <Table
+        trHead={Object.keys(Prisma.BatchScalarFieldEnum).map((columnName) => (
+          <th key={columnName}>{columnName}</th>
+        ))}
+        trData={user.batches.map((batch) => (
+          <>
+            <td>{batch.id}</td>
+            <td>{new Date(batch.createdAt).toDateString()}</td>
+            <td>{new Date(batch.updatedAt).toDateString()}</td>
+            <td>{batch.title}</td>
+            <td>{batch.description ?? '-'}</td>
+            <td>{new Prisma.Decimal(batch.purity).toNumber()}</td>
+            <td>{new Prisma.Decimal(batch.weight).toNumber()}</td>
+            <td>{batch.supplierId}</td>
+          </>
+        ))}
+      />
     </div>
   );
 };

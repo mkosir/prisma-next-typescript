@@ -1,7 +1,7 @@
 import { Prisma } from '@prisma/client';
 import Tilt from 'react-parallax-tilt';
 
-import { Link } from 'common/components/Link';
+import { Link } from 'common/components';
 import { ServerSidePropsUsers } from 'pages/users';
 
 type Users = ServerSidePropsUsers['users'];
