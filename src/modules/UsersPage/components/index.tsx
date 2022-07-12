@@ -19,7 +19,7 @@ export const UserCard = ({ user, onUserSelected }: UserCardProps) => {
     : '-';
 
   return (
-    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} style={{ width: '400px' }}>
+    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} style={{ maxWidth: '400px' }}>
       <div
         style={{
           display: 'flex',
