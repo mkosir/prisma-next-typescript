@@ -19,14 +19,14 @@ export const UserCard = ({ user }: UserCardProps) => {
     : '-';
 
   return (
-    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} style={{ maxWidth: '400px' }}>
+    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} style={{ minWidth: '350px', maxWidth: '400px' }}>
       <Link href={`users/${user.id}`} isUnstyled>
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             backgroundColor: 'rgba(172, 201, 243, 0.07)',
-            margin: '10px 0',
+            margin: '10px',
             padding: '15px',
             borderRadius: '5px',
             boxShadow: '0 4px 8px 0 rgba(13, 99, 220, 0.13)',
@@ -43,7 +43,7 @@ export const UserCard = ({ user }: UserCardProps) => {
               <li>Average purity {purityAverage}</li>
             </div>
           </div>
-          <img src={user.imageUrl ?? '/no-user.jpg'} alt="user" width={85} style={{ borderRadius: '4px' }} />
+          <img src={user.imageUrl ?? '/no-user.jpg'} alt="user" height={90} style={{ borderRadius: '4px' }} />
         </div>
       </Link>
     </Tilt>
