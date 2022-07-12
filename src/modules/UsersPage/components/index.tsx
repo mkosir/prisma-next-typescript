@@ -20,7 +20,7 @@ export const UserCard = ({ user }: UserCardProps) => {
 
   return (
     <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} style={{ maxWidth: '400px' }}>
-      <Link linkNextProps={{ href: `users/${user.id}` }} isUnStyled>
+      <Link href={`users/${user.id}`} isUnstyled>
         <a style={{ textDecoration: 'none', color: 'inherit' }}>
           <div
             style={{

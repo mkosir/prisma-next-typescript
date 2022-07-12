@@ -3,12 +3,11 @@ import { ReactNode } from 'react';
 
 export type LinkProps = {
   children: ReactNode;
-  linkNextProps: LinkNextProps;
-  isUnStyled?: boolean;
-};
+  isUnstyled?: boolean;
+} & LinkNextProps;
 
-export const Link = ({ children, linkNextProps, isUnStyled = false }: LinkProps) => (
+export const Link = ({ children, isUnstyled = false, ...linkNextProps }: LinkProps) => (
   <LinkNext {...linkNextProps}>
-    <a style={isUnStyled ? { textDecoration: 'none', color: 'inherit' } : undefined}>{children}</a>
+    <a style={isUnstyled ? { textDecoration: 'none', color: 'inherit' } : undefined}>{children}</a>
   </LinkNext>
 );

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'common/components/Link';
 
 export const HomePage = () => {
   return (
@@ -6,14 +6,10 @@ export const HomePage = () => {
       <h3>Models:</h3>
       <ul>
         <Link href="/users">
-          <a>
-            <li>Users</li>
-          </a>
+          <li>Users</li>
         </Link>
         <Link href="/batches">
-          <a>
-            <li>Batches</li>
-          </a>
+          <li>Batches</li>
         </Link>
       </ul>
     </div>
