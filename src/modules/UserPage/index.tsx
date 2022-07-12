@@ -36,9 +36,23 @@ export const UserPage = ({ userId, user }: ServerSidePropsUser) => {
       />
       <h4>Batches Cooked</h4>
       <Table
-        trHead={Object.keys(Prisma.BatchScalarFieldEnum).map((columnName) => (
-          <th key={columnName}>{columnName}</th>
-        ))}
+        trHead={Object.keys(Prisma.BatchScalarFieldEnum).map((columnName) => {
+          let unit = '';
+          switch (columnName as Prisma.BatchScalarFieldEnum) {
+            case 'purity':
+              unit = '[%]';
+              break;
+            case 'weight':
+              unit = '[kg]';
+              break;
+          }
+          return (
+            <th key={columnName}>
+              {columnName}
+              {unit}
+            </th>
+          );
+        })}
         trData={user.batches.map((batch) => (
           <>
             <td>{batch.id}</td>
