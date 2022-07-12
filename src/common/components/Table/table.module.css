@@ -1,0 +1,19 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+.row:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.row :global td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.row :global th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
