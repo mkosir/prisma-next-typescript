@@ -24,11 +24,11 @@ export const UserCard = ({ user, onUserSelected }: UserCardProps) => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          backgroundColor: 'rgba(172, 201, 243, 0.1)',
+          backgroundColor: 'rgba(172, 201, 243, 0.07)',
           margin: '10px 0',
           padding: '15px',
           borderRadius: '5px',
-          boxShadow: '0 4px 8px 0 rgba(13, 99, 220, 0.2)',
+          boxShadow: '0 4px 8px 0 rgba(13, 99, 220, 0.13)',
           cursor: 'pointer',
         }}
         role="button"
