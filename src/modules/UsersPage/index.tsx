@@ -1,6 +1,6 @@
 import { ServerSidePropsUsers } from 'pages/users';
 
-import { UserCard } from './components';
+import { UserCard } from './components/UserCard';
 
 export const UsersPage = ({ users }: ServerSidePropsUsers) => {
   return (
