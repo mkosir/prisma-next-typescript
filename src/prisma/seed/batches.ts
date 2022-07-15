@@ -3,7 +3,7 @@ import { Prisma } from '@prisma/client';
 import { supplierIdGoldenMothChemical, supplierIdWarehouse } from './suppliers';
 import { userIdJessePinkman, userIdWalterWhite } from './users';
 
-export const batches: Prisma.BatchCreateInput[] = [
+export const batches: Array<Prisma.BatchCreateInput> = [
   {
     id: '2f008731-4645-43de-8af9-3060d4086001',
     title: 'Blue Sky',

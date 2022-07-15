@@ -3,7 +3,7 @@ import { Prisma } from '@prisma/client';
 export const supplierIdGoldenMothChemical = '3f008731-4645-43de-8af9-3060d4086001';
 export const supplierIdWarehouse = '3f008731-4645-43de-8af9-3060d4086002';
 
-export const suppliers: Prisma.SupplierCreateInput[] = [
+export const suppliers: Array<Prisma.SupplierCreateInput> = [
   {
     id: supplierIdGoldenMothChemical,
     name: 'Golden Moth Chemical',
