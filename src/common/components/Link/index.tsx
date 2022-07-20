@@ -1,6 +1,8 @@
 import LinkNext, { LinkProps as LinkNextProps } from 'next/link';
 import { ReactNode } from 'react';
 
+import styles from './link.module.css';
+
 export type LinkProps = {
   children: ReactNode;
   isUnstyled?: boolean;
@@ -8,6 +10,6 @@ export type LinkProps = {
 
 export const Link = ({ children, isUnstyled = false, ...linkNextProps }: LinkProps) => (
   <LinkNext {...linkNextProps}>
-    <a style={isUnstyled ? { textDecoration: 'none', color: 'inherit' } : undefined}>{children}</a>
+    <a className={isUnstyled ? styles.linkUnstyled : styles.link}>{children}</a>
   </LinkNext>
 );

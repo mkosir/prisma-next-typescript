@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import 'common/styles/globals.css';
+import { Breadcrumbs } from 'common/components';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -17,6 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           Minimal GraphQL boilerplate with Prisma, Next.js and TypeScript{' '}
         </div>
       </div>
+      <Breadcrumbs />
       <Component {...pageProps} />
     </>
   );

@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+  color: #005fcc;
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+  text-decoration: underline;
+}
+
+.linkUnstyled {
+  text-decoration: none;
+  color: inherit;
+}
