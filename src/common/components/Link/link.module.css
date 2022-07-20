@@ -1,12 +1,13 @@
 .link {
   text-decoration: none;
-  color: #005fcc;
+  color: var(--color-blue-sky-400);
 }
 
 .link:hover,
 .link:focus,
 .link:active {
   text-decoration: underline;
+  color: var(--color-blue-sky-500);
 }
 
 .linkUnstyled {

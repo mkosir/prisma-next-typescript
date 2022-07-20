@@ -9,3 +9,8 @@ body {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --color-blue-sky-400: #64b0ce;
+  --color-blue-sky-500: #3d9cc2;
+}
