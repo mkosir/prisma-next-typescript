@@ -22,7 +22,7 @@ model User {
 enum Role {
   STANDARD
   APPRENTICE
-  SUPERVISOR
+  SUPERVISORX
   ADMINISTRATOR
 }
 
