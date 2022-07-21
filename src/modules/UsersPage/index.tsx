@@ -7,18 +7,7 @@ export const UsersPage = ({ users }: ServerSidePropsUsers) => {
   return (
     <>
       <h3>👤 Users</h3>
-      <Link href={'/users/add/test'} isUnstyled>
-        <button
-          style={{
-            fontSize: '14px',
-            backgroundColor: '#3d9cc23b',
-            padding: '3px 10px',
-            borderRadius: '5px',
-          }}
-        >
-          Add +
-        </button>
-      </Link>
+      <Link href={'/users/add'}>Add +</Link>
       <div style={{ paddingBottom: '10px', fontStyle: 'italic', marginTop: '10px' }}>
         Total No. of users: {users.length}
       </div>
