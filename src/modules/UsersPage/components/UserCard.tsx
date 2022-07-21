@@ -20,7 +20,7 @@ export const UserCard = ({ user }: UserCardProps) => {
 
   return (
     <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} scale={1.05} style={{ minWidth: '350px', maxWidth: '400px' }}>
-      <Link href={`users/${user.id}`} isUnstyled>
+      <Link href={`/users/${user.id}`} isUnstyled>
         <div
           style={{
             display: 'flex',
