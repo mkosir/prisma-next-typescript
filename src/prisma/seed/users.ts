@@ -84,4 +84,11 @@ export const users: Array<Prisma.UserCreateInput> = [
     username: 'Tuco',
     role: 'STANDARD',
   },
+  {
+    id: '1f008731-4645-43de-8af9-3060d4086011',
+    email: 'gale.boetticher@mail.com',
+    name: 'Gale Boetticher',
+    username: 'Captain Nerd',
+    role: 'APPRENTICE',
+  },
 ];
