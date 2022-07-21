@@ -20,7 +20,7 @@ export const UserCard = ({ user }: UserCardProps) => {
     : '-';
 
   return (
-    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} scale={1.05} style={{ minWidth: '350px', maxWidth: '400px' }}>
+    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} scale={1.05} style={{ minWidth: '380px', maxWidth: '400px' }}>
       <Link href={Path.USERS_DETAILS(user.username)} isUnstyled>
         <div
           style={{
@@ -44,7 +44,12 @@ export const UserCard = ({ user }: UserCardProps) => {
               <li>Average purity {purityAverage}</li>
             </div>
           </div>
-          <img src={user.imageUrl ?? '/no-user.jpg'} alt="user" height={90} style={{ borderRadius: '4px' }} />
+          <img
+            src={user.imageUrl ?? '/no-user.jpg'}
+            alt="user"
+            height={90}
+            style={{ borderRadius: '4px', marginLeft: '5px' }}
+          />
         </div>
       </Link>
     </Tilt>
