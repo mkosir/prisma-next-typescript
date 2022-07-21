@@ -8,7 +8,7 @@ CREATE TABLE "User" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "email" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "username" TEXT,
+    "username" TEXT NOT NULL,
     "imageUrl" TEXT,
     "role" "Role" NOT NULL DEFAULT 'STANDARD',
 
@@ -48,6 +48,9 @@ CREATE TABLE "_BatchToUser" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "_BatchToUser_AB_unique" ON "_BatchToUser"("A", "B");

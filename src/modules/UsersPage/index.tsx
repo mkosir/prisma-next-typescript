@@ -1,4 +1,5 @@
 import { Link } from 'common/components';
+import { Path } from 'common/consts/Path';
 import { ServerSidePropsUsers } from 'pages/users';
 
 import { UserCard } from './components/UserCard';
@@ -7,7 +8,7 @@ export const UsersPage = ({ users }: ServerSidePropsUsers) => {
   return (
     <>
       <h3>👤 Users</h3>
-      <Link href={'/users/add'}>Add +</Link>
+      <Link href={Path.USERS_ADD}>Add +</Link>
       <div style={{ paddingBottom: '10px', fontStyle: 'italic', marginTop: '10px' }}>
         Total No. of users: {users.length}
       </div>

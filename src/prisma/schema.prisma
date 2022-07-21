@@ -13,7 +13,7 @@ model User {
   updatedAt DateTime @updatedAt
   email     String   @unique
   name      String
-  username  String?
+  username  String   @unique
   imageUrl  String?
   role      Role     @default(STANDARD)
   batches   Batch[]

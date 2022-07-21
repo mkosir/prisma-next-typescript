@@ -1,13 +1,14 @@
 import { Prisma } from '@prisma/client';
 
 import { Table } from 'common/components';
-import { ServerSidePropsUser } from 'pages/users/[id]';
+import { ServerSidePropsUser } from 'pages/users/[username]';
 
-export const UserPage = ({ userId, user }: ServerSidePropsUser) => {
+export const UserPage = ({ urlParamUsername, user }: ServerSidePropsUser) => {
   if (user === null) {
     return (
       <div>
-        User with id <span style={{ fontStyle: 'italic', color: 'gray' }}>{userId}</span> does not exist.
+        User with username <span style={{ fontStyle: 'italic', color: 'gray' }}>{urlParamUsername}</span> does not
+        exist.
       </div>
     );
   }

@@ -2,6 +2,7 @@ import { Prisma } from '@prisma/client';
 import Tilt from 'react-parallax-tilt';
 
 import { Link } from 'common/components';
+import { Path } from 'common/consts/Path';
 import { ServerSidePropsUsers } from 'pages/users';
 
 type Users = ServerSidePropsUsers['users'];
@@ -20,7 +21,7 @@ export const UserCard = ({ user }: UserCardProps) => {
 
   return (
     <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} scale={1.05} style={{ minWidth: '350px', maxWidth: '400px' }}>
-      <Link href={`/users/${user.id}`} isUnstyled>
+      <Link href={Path.USERS_DETAILS(user.username)} isUnstyled>
         <div
           style={{
             display: 'flex',
