@@ -18,10 +18,10 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-${{ hashFiles('package-lock.json' | 'src/prisma/schema.prisma') }}
 
       - name: Install dependencies 🔧
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: steps.cache.outputs.cache-hit == 'false'
         run: npm ci
 
       - name: Lint ✅
