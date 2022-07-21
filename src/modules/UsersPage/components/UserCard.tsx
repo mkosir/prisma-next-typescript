@@ -35,7 +35,7 @@ export const UserCard = ({ user }: UserCardProps) => {
         >
           <div>
             <div>
-              {user.name} - {user.username}
+              {user.name} <span style={{ fontStyle: 'italic', color: 'gray' }}>{user.username}</span>
             </div>
             <div>Current role: {user.role.toLowerCase()}</div>
             <div>
