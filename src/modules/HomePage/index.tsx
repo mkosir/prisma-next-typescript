@@ -1,15 +1,15 @@
 import { Link } from 'common/components';
-import { Path } from 'common/consts/Path';
+import { paths } from 'common/consts/paths';
 
 export const HomePage = () => {
   return (
     <div>
       <h3>Models:</h3>
       <ul>
-        <Link href={Path.USERS}>
+        <Link href={paths.USERS}>
           <li>Users</li>
         </Link>
-        <Link href={Path.BATCHES}>
+        <Link href={paths.BATCHES}>
           <li>Batches</li>
         </Link>
       </ul>

@@ -1,7 +1,4 @@
-type PathValue = `/${string}` | ((...args: ReadonlyArray<string>) => `/${string}`);
-type Path = Record<string, PathValue>;
-
-export const path: Path = {
+export const paths = {
   HOME: '/',
   BATCHES: '/batches',
   USERS: '/users',
