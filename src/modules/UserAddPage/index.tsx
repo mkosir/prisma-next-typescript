@@ -11,7 +11,7 @@ export const UserAddPage = () => {
       <Input label="Username:" />
       <Input label="Image URL:" />
       <div>
-        <label htmlFor="roles" style={{ fontStyle: 'italic', color: 'gray' }}>
+        <label htmlFor="roles" style={{ fontStyle: 'italic', fontSize: '14px' }}>
           Role:
         </label>
         <select

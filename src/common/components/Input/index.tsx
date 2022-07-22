@@ -4,7 +4,7 @@ type InputProps = {
 
 export const Input = ({ label }: InputProps) => (
   <div>
-    <label htmlFor={label} style={{ fontStyle: 'italic', color: 'gray' }}>
+    <label htmlFor={label} style={{ fontStyle: 'italic', fontSize: '14px' }}>
       {label}
     </label>
     <input
