@@ -34,6 +34,7 @@ export const UserAddPage = () => {
           borderRadius: '5px',
           marginTop: '7px',
         }}
+        onClick={() => console.log('🔎 Log ~ onClick')}
       >
         Add
       </button>
