@@ -1,68 +1,17 @@
-import { Prisma, Role } from '@prisma/client';
-import { FormEvent, useState } from 'react';
+import { Role } from '@prisma/client';
+import { useState } from 'react';
 
 import { Input } from 'common/components';
-import { pathsApi } from 'common/consts/pathsApi';
 
-type FormElements = Readonly<
-  {
-    email: HTMLInputElement;
-    name: HTMLInputElement;
-    username: HTMLInputElement;
-    imageUrl: HTMLInputElement;
-    role: HTMLSelectElement;
-  } & HTMLFormControlsCollection
->;
-
-type AddUserForm = Readonly<
-  {
-    elements: FormElements;
-  } & HTMLFormElement
->;
-
-export const minimalInputValidation = (formElements: FormElements): boolean => {
-  const { email, name, username } = formElements;
-
-  if ((email.value === '' || name.value === '', username.value === '')) {
-    return true;
-  }
-
-  return false;
-};
+import { AddUserFormEvent, handleSubmit } from './handleSubmit';
 
 export const UserAddPage = () => {
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (event: FormEvent<AddUserForm>) => {
-    event.preventDefault();
-
-    if (minimalInputValidation(event.currentTarget.elements)) {
-      setError('Please fill out required input fields *');
-      return;
-    }
-
-    const { email, name, username, imageUrl, role } = event.currentTarget.elements;
-    const body: Prisma.UserCreateInput = {
-      email: email.value,
-      name: name.value,
-      username: username.value,
-      imageUrl: imageUrl.value === '' ? imageUrl.value : null,
-      role: role.value as Role,
-    };
-
-    fetch(pathsApi.USERS, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
-  };
-
   return (
     <div>
       <h3>➕ Add User</h3>
-      <form onSubmit={handleSubmit} style={{ maxWidth: '200px' }}>
+      <form onSubmit={(event) => handleSubmit(event as AddUserFormEvent, setError)} style={{ maxWidth: '200px' }}>
         <Input id="email" label="*Email:" />
         <Input id="name" label="*Name:" />
         <Input id="username" label="*Username:" />
