@@ -1,9 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-  name: string;
+  message: string;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  res.status(200).json({ name: 'John Doe' });
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data | null>) {
+  switch (req.method) {
+    case 'POST':
+      console.log('🔎 Log ~ handler ~ req.body', req.body.email);
+      res.status(201).json(null);
+      return;
+
+    default:
+      res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
+      return;
+  }
 }

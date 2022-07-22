@@ -2,6 +2,7 @@ import { Role } from '@prisma/client';
 import { FormEvent } from 'react';
 
 import { Input } from 'common/components';
+import { pathsApi } from 'common/consts/pathsApi';
 
 // type test = Prisma.UserCreateInput;
 
@@ -21,11 +22,36 @@ type AddUserForm = Readonly<
   } & HTMLFormElement
 >;
 
+export const minimalInputValidation = (formElements: FormElements): boolean => {
+  console.log('🔎 Log ~ minimalInputValidation ~ formElements', formElements);
+  // const { email, name, username, imageUrl, roles } = formElements;
+  //   const requiredFormElements => { email, name, username, imageUrl, roles } => requiredFormElements;
+  // if(email.va)
+
+  return true;
+};
+
 export const UserAddPage = () => {
   const handleSubmit = (event: FormEvent<AddUserForm>) => {
     event.preventDefault();
+    const { email, name, username, imageUrl, roles } = event.currentTarget.elements;
+    minimalInputValidation(event.currentTarget.elements);
 
     console.log('🔎 Log ~ handleSubmit ', event.currentTarget.elements.email.value);
+
+    fetch(pathsApi.USERS, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email.value,
+        name: name.value,
+        username: username.value,
+        imageUrl: imageUrl.value,
+        roles: roles.value,
+      }),
+    });
   };
 
   return (
