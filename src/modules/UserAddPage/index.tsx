@@ -1,7 +1,7 @@
 import { Role } from '@prisma/client';
 import { useState } from 'react';
 
-import { Input } from 'common/components';
+import { Input, Select } from 'common/components';
 
 import { AddUserFormEvent, handleSubmit } from './handleSubmit';
 
@@ -16,22 +16,7 @@ export const UserAddPage = () => {
         <Input id="name" label="*Name:" />
         <Input id="username" label="*Username:" />
         <Input id="imageUrl" label="Image URL:" />
-        <div>
-          <label htmlFor="role" style={{ fontStyle: 'italic', fontSize: '14px' }}>
-            Role:
-          </label>
-          <select
-            name="role"
-            id="role"
-            style={{ display: 'inline-block', width: '100%', fontSize: '14px', padding: '3px 3px', marginTop: '2px' }}
-          >
-            {Object.values(Role).map((role) => (
-              <option key={role} value={role}>
-                {role}
-              </option>
-            ))}
-          </select>
-        </div>
+        <Select id="role" label="Role:" options={Object.values(Role)} />
         <button
           style={{
             fontSize: '14px',
