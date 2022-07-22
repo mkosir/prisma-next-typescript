@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 import styles from './link.module.css';
 
-export type LinkProps = {
+type LinkProps = {
   children: ReactNode;
   isUnstyled?: boolean;
 } & LinkNextProps;

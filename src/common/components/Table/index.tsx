@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import styles from './table.module.css';
 
-export type TableProps = {
+type TableProps = {
   trHead: Readonly<ReactNode>;
   trData: ReadonlyArray<ReactNode>;
 };
