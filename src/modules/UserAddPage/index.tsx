@@ -21,12 +21,13 @@ type AddUserForm = Readonly<
 >;
 
 export const minimalInputValidation = (formElements: FormElements): boolean => {
-  console.log('🔎 Log ~ minimalInputValidation ~ formElements', formElements);
-  // const { email, name, username, imageUrl, roles } = formElements;
-  //   const requiredFormElements => { email, name, username, imageUrl, roles } => requiredFormElements;
-  // if(email.va)
+  const { email, name, username } = formElements;
 
-  return true;
+  if ((email.value === '' || name.value === '', username.value === '')) {
+    return true;
+  }
+
+  return false;
 };
 
 export const UserAddPage = () => {
@@ -35,12 +36,12 @@ export const UserAddPage = () => {
   const handleSubmit = (event: FormEvent<AddUserForm>) => {
     event.preventDefault();
 
-    const { email, name, username, imageUrl, role } = event.currentTarget.elements;
     if (minimalInputValidation(event.currentTarget.elements)) {
       setError('Please fill out required input fields *');
       return;
     }
 
+    const { email, name, username, imageUrl, role } = event.currentTarget.elements;
     const body: Prisma.UserCreateInput = {
       email: email.value,
       name: name.value,
@@ -68,7 +69,7 @@ export const UserAddPage = () => {
         <Input id="imageUrl" label="Image URL:" />
         <div>
           <label htmlFor="role" style={{ fontStyle: 'italic', fontSize: '14px' }}>
-            *Role:
+            Role:
           </label>
           <select
             name="role"
