@@ -1,10 +1,8 @@
-import { Role } from '@prisma/client';
+import { Prisma, Role } from '@prisma/client';
 import { FormEvent } from 'react';
 
 import { Input } from 'common/components';
 import { pathsApi } from 'common/consts/pathsApi';
-
-// type test = Prisma.UserCreateInput;
 
 type FormElements = Readonly<
   {
@@ -12,7 +10,7 @@ type FormElements = Readonly<
     name: HTMLInputElement;
     username: HTMLInputElement;
     imageUrl: HTMLInputElement;
-    roles: HTMLSelectElement;
+    role: HTMLSelectElement;
   } & HTMLFormControlsCollection
 >;
 
@@ -34,23 +32,24 @@ export const minimalInputValidation = (formElements: FormElements): boolean => {
 export const UserAddPage = () => {
   const handleSubmit = (event: FormEvent<AddUserForm>) => {
     event.preventDefault();
-    const { email, name, username, imageUrl, roles } = event.currentTarget.elements;
+
+    const { email, name, username, imageUrl, role } = event.currentTarget.elements;
     minimalInputValidation(event.currentTarget.elements);
 
-    console.log('🔎 Log ~ handleSubmit ', event.currentTarget.elements.email.value);
+    const body: Prisma.UserCreateInput = {
+      email: email.value,
+      name: name.value,
+      username: username.value,
+      imageUrl: imageUrl.value === '' ? imageUrl.value : null,
+      role: role.value as Role,
+    };
 
     fetch(pathsApi.USERS, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        email: email.value,
-        name: name.value,
-        username: username.value,
-        imageUrl: imageUrl.value,
-        roles: roles.value,
-      }),
+      body: JSON.stringify(body),
     });
   };
 
@@ -63,12 +62,12 @@ export const UserAddPage = () => {
         <Input id="username" label="Username:" />
         <Input id="imageUrl" label="Image URL:" />
         <div>
-          <label htmlFor="roles" style={{ fontStyle: 'italic', fontSize: '14px' }}>
+          <label htmlFor="role" style={{ fontStyle: 'italic', fontSize: '14px' }}>
             Role:
           </label>
           <select
-            name="roles"
-            id="roles"
+            name="role"
+            id="role"
             style={{ display: 'inline-block', width: '100%', fontSize: '14px', padding: '3px 3px', marginTop: '2px' }}
           >
             {Object.values(Role).map((role) => (
