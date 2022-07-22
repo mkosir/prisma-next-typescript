@@ -1,5 +1,5 @@
 import { Prisma, Role } from '@prisma/client';
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 
 import { Input } from 'common/components';
 import { pathsApi } from 'common/consts/pathsApi';
@@ -30,11 +30,16 @@ export const minimalInputValidation = (formElements: FormElements): boolean => {
 };
 
 export const UserAddPage = () => {
+  const [error, setError] = useState<string | null>(null);
+
   const handleSubmit = (event: FormEvent<AddUserForm>) => {
     event.preventDefault();
 
     const { email, name, username, imageUrl, role } = event.currentTarget.elements;
-    minimalInputValidation(event.currentTarget.elements);
+    if (minimalInputValidation(event.currentTarget.elements)) {
+      setError('Please fill out required input fields *');
+      return;
+    }
 
     const body: Prisma.UserCreateInput = {
       email: email.value,
@@ -57,13 +62,13 @@ export const UserAddPage = () => {
     <div>
       <h3>➕ Add User</h3>
       <form onSubmit={handleSubmit} style={{ maxWidth: '200px' }}>
-        <Input id="email" label="Email:" />
-        <Input id="name" label="Name:" />
-        <Input id="username" label="Username:" />
+        <Input id="email" label="*Email:" />
+        <Input id="name" label="*Name:" />
+        <Input id="username" label="*Username:" />
         <Input id="imageUrl" label="Image URL:" />
         <div>
           <label htmlFor="role" style={{ fontStyle: 'italic', fontSize: '14px' }}>
-            Role:
+            *Role:
           </label>
           <select
             name="role"
@@ -90,6 +95,7 @@ export const UserAddPage = () => {
           Add
         </button>
       </form>
+      {error && <div style={{ fontSize: '12px', fontStyle: 'italic', color: 'red', marginTop: '3px' }}>{error}</div>}
     </div>
   );
 };
