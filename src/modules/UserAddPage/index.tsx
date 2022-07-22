@@ -1,3 +1,5 @@
+import { Role } from '@prisma/client';
+
 import { Input } from 'common/components';
 
 export const UserAddPage = () => {
@@ -17,10 +19,11 @@ export const UserAddPage = () => {
           id="roles"
           style={{ display: 'inline-block', width: '100%', fontSize: '14px', padding: '3px 3px', marginTop: '2px' }}
         >
-          <option value="STANDARD">Standard</option>
-          <option value="APPRENTICE">Apprentice</option>
-          <option value="SUPERVISOR">Supervisor</option>
-          <option value="ADMINISTRATOR">Administrator</option>
+          {Object.values(Role).map((role) => (
+            <option key={role} value={role}>
+              {role}
+            </option>
+          ))}
         </select>
       </div>
       <button
