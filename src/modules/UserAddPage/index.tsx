@@ -3,6 +3,8 @@ import { FormEvent } from 'react';
 
 import { Input } from 'common/components';
 
+// type test = Prisma.UserCreateInput;
+
 type FormElements = Readonly<
   {
     email: HTMLInputElement;
@@ -23,7 +25,7 @@ export const UserAddPage = () => {
   const handleSubmit = (event: FormEvent<AddUserForm>) => {
     event.preventDefault();
 
-    console.log('🔎 Log ~ handleSubmit ~ event.currentTarget.elements.value', event.currentTarget.elements.email.value);
+    console.log('🔎 Log ~ handleSubmit ', event.currentTarget.elements.email.value);
   };
 
   return (
