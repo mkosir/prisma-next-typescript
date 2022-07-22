@@ -27,7 +27,7 @@
     "db-reset-dev": "ENV=dev npm run db-reset"
   },
   "dependencies": {
-    "next": "12.2.2",
+    "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-parallax-tilt": "^1.7.46"
