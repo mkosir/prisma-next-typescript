@@ -3,12 +3,11 @@ import { Prisma } from '@prisma/client';
 import { Table } from 'common/components';
 import { ServerSidePropsUser } from 'pages/users/[username]';
 
-export const UserPage = ({ urlParamUsername, user }: ServerSidePropsUser) => {
+export const UserPage = ({ queryParamUsername, user }: ServerSidePropsUser) => {
   if (user === null) {
     return (
       <div>
-        User with username <span style={{ fontStyle: 'italic', color: 'gray' }}>{urlParamUsername}</span> does not
-        exist.
+        Username <span style={{ fontStyle: 'italic', color: 'gray' }}>{queryParamUsername}</span> does not exist.
       </div>
     );
   }

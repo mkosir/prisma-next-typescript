@@ -8,15 +8,15 @@ import prisma from 'prisma/prismaClient';
 export type ShowResponse = User | ResponseError;
 
 export const show = async (req: NextApiRequestExtended, res: NextApiResponse<ShowResponse>) => {
-  const urlParamUsername = req.query.username;
-
   try {
+    const queryParamUsername = req.query.username;
+
     const user = await prisma.user.findUnique({
-      where: { username: urlParamUsername },
+      where: { username: queryParamUsername },
     });
 
     if (user === null) {
-      res.status(404).json({ message: `Username '${urlParamUsername}' can't be found` });
+      res.status(404).json({ message: `Username '${queryParamUsername}' can't be found` });
       return;
     }
 

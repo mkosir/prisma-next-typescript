@@ -7,11 +7,11 @@ import prisma from 'prisma/prismaClient';
 export type DestroyResponse = null | ResponseError;
 
 export const destroy = async (req: NextApiRequestExtended, res: NextApiResponse<DestroyResponse>) => {
-  const urlParamUsername = req.query.username;
+  const queryParamUsername = req.query.username;
 
   try {
     await prisma.user.delete({
-      where: { username: urlParamUsername },
+      where: { username: queryParamUsername },
     });
 
     res.status(200).json(null);
