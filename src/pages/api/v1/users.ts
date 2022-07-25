@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { create, CreateResponse } from '../../controllers/users/create';
-import { destroy, DestroyResponse } from '../../controllers/users/destroy';
-import { list, ListResponse } from '../../controllers/users/list';
-import { ShowResponse } from '../../controllers/users/show';
+import { create, CreateResponse } from '../../../controllers/users/create';
+import { destroy, DestroyResponse } from '../../../controllers/users/destroy';
+import { list, ListResponse } from '../../../controllers/users/list';
+import { ShowResponse } from '../../../controllers/users/show';
 
 type UsersResponse = CreateResponse | DestroyResponse | ShowResponse | ListResponse;
 
