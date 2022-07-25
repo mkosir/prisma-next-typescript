@@ -1,11 +1,10 @@
 import { Prisma } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import { ResponseError } from 'common/types/apiV1';
 import prisma from 'prisma/prismaClient';
 
-export type CreateResponse = {
-  message: string;
-} | null;
+export type CreateResponse = null | ResponseError;
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 interface NextApiRequestWithBody extends NextApiRequest {

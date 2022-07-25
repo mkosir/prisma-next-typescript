@@ -1,13 +1,10 @@
 import { User } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import { ResponseError } from 'common/types/apiV1';
 import prisma from 'prisma/prismaClient';
 
-export type ListResponse =
-  | {
-      message: string;
-    }
-  | ReadonlyArray<User>;
+export type ListResponse = ReadonlyArray<User> | ResponseError;
 
 export const list = async (req: NextApiRequest, res: NextApiResponse<ListResponse>) => {
   try {

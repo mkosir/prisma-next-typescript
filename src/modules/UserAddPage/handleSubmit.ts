@@ -4,6 +4,7 @@ import { Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { paths } from 'common/consts/paths';
 import { pathsApiV1 } from 'common/consts/pathsApi';
+import { ResponseError } from 'common/types/apiV1';
 
 type FormElements = Readonly<
   {
@@ -50,7 +51,7 @@ export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<S
   });
 
   if (!response.ok) {
-    const data = await response.json();
+    const data: ResponseError | Error = await response.json();
     setError(data?.message ?? 'Network error occurred');
     return;
   }
