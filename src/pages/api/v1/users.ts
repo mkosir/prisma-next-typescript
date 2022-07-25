@@ -17,7 +17,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       create(req, res);
       return;
     case 'DELETE':
-      return destroy(req, res);
+      destroy(req, res);
+      return;
     default:
       res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
       return;
