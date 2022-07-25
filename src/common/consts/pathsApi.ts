@@ -1,5 +1,5 @@
-const apiPathPrefix = '/api';
+const prefixPathApi = '/api/v1';
 
-export const pathsApi = {
-  USERS: `${apiPathPrefix}/users`,
+export const pathsApiV1 = {
+  USERS: `${prefixPathApi}/users`,
 } as const;

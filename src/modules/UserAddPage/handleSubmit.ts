@@ -3,7 +3,7 @@ import Router from 'next/router';
 import { Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { paths } from 'common/consts/paths';
-import { pathsApi } from 'common/consts/pathsApi';
+import { pathsApiV1 } from 'common/consts/pathsApi';
 
 type FormElements = Readonly<
   {
@@ -41,7 +41,7 @@ export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<S
     role: role.value as Role,
   };
 
-  const response = await fetch(pathsApi.USERS, {
+  const response = await fetch(pathsApiV1.USERS, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
