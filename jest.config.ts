@@ -1,5 +1,9 @@
 import { Config } from 'jest';
-// import nextJest from 'next/jest';
+import nextJest from 'next/jest';
+
+const createJestConfig = nextJest({
+  dir: './',
+});
 
 const jestConfig: Config = {
   testEnvironment: 'jsdom',
@@ -9,4 +13,4 @@ const jestConfig: Config = {
   moduleDirectories: ['node_modules', 'src'],
 };
 
-module.exports = jestConfig;
+module.exports = createJestConfig(jestConfig);
