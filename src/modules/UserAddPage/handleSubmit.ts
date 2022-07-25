@@ -37,7 +37,7 @@ export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<S
     email: email.value,
     name: name.value,
     username: username.value,
-    imageUrl: imageUrl.value.trim.length ? imageUrl.value : null,
+    imageUrl: imageUrl.value.trim().length ? imageUrl.value : null,
     role: role.value as Role,
   };
 
