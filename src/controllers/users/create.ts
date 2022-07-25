@@ -7,11 +7,11 @@ import prisma from 'prisma/prismaClient';
 export type CreateResponse = null | ResponseError;
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-interface NextApiRequestWithBody extends NextApiRequest {
+interface NextApiRequestExtended extends NextApiRequest {
   body: Prisma.UserCreateInput;
 }
 
-export const create = async (req: NextApiRequestWithBody, res: NextApiResponse<CreateResponse>) => {
+export const create = async (req: NextApiRequestExtended, res: NextApiResponse<CreateResponse>) => {
   try {
     await prisma.user.create({
       data: req.body,
