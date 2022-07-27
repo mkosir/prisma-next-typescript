@@ -1,12 +1,13 @@
-import usersEndpoint from 'pages/api/v1/users/[username]';
+import { User } from '@prisma/client';
+
+import { pathsApiV1 } from 'common/consts/pathsApi';
+import { testClient } from 'common/test/testClient';
+import { ResponseError } from 'common/types/apiV1';
 import prisma from 'prisma/prismaClient';
 import { users } from 'prisma/seed/users';
-import { testClient } from 'testClient';
 
 describe('Controllers', () => {
   describe('Users - Show', () => {
-    const request = testClient(usersEndpoint);
-
     beforeAll(async () => {
       await prisma.user.createMany({
         data: users,
@@ -22,32 +23,23 @@ describe('Controllers', () => {
     });
 
     it('should show a new user when valid username is provided', async () => {
-      const res = await request.get('').query({ username: 'Heisenberg' });
-      console.log('🔎 Log ~ it ~ res.status', res.status);
-      console.log('🔎 Log ~ it ~ res.body', res.body);
+      const { status, data } = await testClient<User>(
+        process.env.NEXT_PUBLIC_BASE_URL + pathsApiV1.USERS_DETAILS('Heisenberg'),
+      );
 
-      const user = await prisma.user.findUnique({
-        where: { username: users[0].username },
-      });
-
-      expect(user?.email).toEqual(users[0].email);
-      expect(user?.role).toEqual(users[0].role);
+      expect(status).toEqual(200);
+      expect(data.email).toEqual(users[0].email);
+      expect(data.role).toEqual(users[0].role);
     });
 
-    // it('should show user not found when invalid username is provided', async () => {
-    //   const user = await prisma.user.findUnique({
-    //     where: { username: 'not_existing_username' },
-    //   });
+    it('should show user not found when invalid username is provided', async () => {
+      const userName = 'not_existing_username';
+      const { status, data } = await testClient<ResponseError>(
+        process.env.NEXT_PUBLIC_BASE_URL + pathsApiV1.USERS_DETAILS(userName),
+      );
 
-    //   expect(user).toEqual(users[0]);
-    // });
-
-    // it('should show user error when invalid query params is passed', async () => {
-    //   const user = await prisma.user.findUnique({
-    //     where: { username: 'not_existing_username' },
-    //   });
-
-    //   expect(user).toEqual(users[0]);
-    // });
+      expect(status).toEqual(404);
+      expect(data).toEqual<ResponseError>({ message: `Username '${userName}' can't be found` });
+    });
   });
 });
