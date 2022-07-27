@@ -6,7 +6,7 @@ const createJestConfig = nextJest({
 });
 
 const jestConfig: Config = {
-  testEnvironment: 'jsdom',
+  testEnvironment: 'node',
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   preset: 'ts-jest',
