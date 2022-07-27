@@ -14,7 +14,7 @@ services:
 
   db_init:
     container_name: 'db_init'
-    image: 'node:18.6-alpine'
+    image: 'node:18.7-alpine'
     env_file:
       - envs/db-init.env
     entrypoint: /bin/sh './app/scripts/db-init.sh'
