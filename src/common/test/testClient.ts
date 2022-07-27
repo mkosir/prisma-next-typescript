@@ -9,7 +9,9 @@
 // ) => unknown | Promise<unknown>;
 
 export const testClient = async <T>(request: RequestInfo): Promise<Response & { data: T }> => {
-  const response = await fetch(request);
+  const baseUrl = 'http://localhost:3000'; //process.env.NEXT_PUBLIC_BASE_URL
+
+  const response = await fetch(`${baseUrl}${request}`);
   const data: T = await response.json();
 
   //@ts-ignore - destructing native fetch response

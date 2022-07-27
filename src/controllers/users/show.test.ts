@@ -23,9 +23,7 @@ describe('Controllers', () => {
     });
 
     it('should show a new user when valid username is provided', async () => {
-      const { status, data } = await testClient<User>(
-        process.env.NEXT_PUBLIC_BASE_URL + pathsApiV1.USERS_DETAILS('Heisenberg'),
-      );
+      const { status, data } = await testClient<User>(pathsApiV1.USERS_DETAILS('Heisenberg'));
 
       expect(status).toEqual(200);
       expect(data.email).toEqual(users[0].email);
@@ -34,9 +32,7 @@ describe('Controllers', () => {
 
     it('should show user not found when invalid username is provided', async () => {
       const userName = 'not_existing_username';
-      const { status, data } = await testClient<ResponseError>(
-        process.env.NEXT_PUBLIC_BASE_URL + pathsApiV1.USERS_DETAILS(userName),
-      );
+      const { status, data } = await testClient<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
 
       expect(status).toEqual(404);
       expect(data).toEqual<ResponseError>({ message: `Username '${userName}' can't be found` });
