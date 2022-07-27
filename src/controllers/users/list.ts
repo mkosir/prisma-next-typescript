@@ -6,7 +6,7 @@ import prisma from 'prisma/prismaClient';
 
 export type ListResponse = ReadonlyArray<User> | ResponseError;
 
-export const list = async (req: NextApiRequest, res: NextApiResponse<ListResponse>) => {
+export const list = async (_req: NextApiRequest, res: NextApiResponse<ListResponse>) => {
   try {
     const users = await prisma.user.findMany();
 

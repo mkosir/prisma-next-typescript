@@ -27,7 +27,7 @@ describe('Controllers', () => {
       expect(status).toEqual(200);
       expect(data[0].email).toEqual(users[0].email);
       expect(data[0].role).toEqual(users[0].role);
-      expect(data.length).toHaveLength(users.length);
+      expect(data).toHaveLength(users.length);
     });
   });
 });
