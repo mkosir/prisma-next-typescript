@@ -1,4 +1,4 @@
-# Prisma / Next.js / TypeScript / GraphQL boilerplate
+# Prisma / Next.js / TypeScript boilerplate
 
 [![CI][build-badge]][build-url]
 [![TypeScript][typescript-badge]][typescript-url]
@@ -30,13 +30,13 @@ Visit [localhost:3000](http://localhost:3000/)
 
 - [Prisma v4](https://www.prisma.io/) ORM
 - [TypeScript v4](https://github.com/microsoft/TypeScript) codebase
-- [NextJs](https://github.com/vercel/next.js) framework for building GraphQL
+- [NextJs](https://github.com/vercel/next.js) RESTful API
 
 ## Contributing
 
 All contributions are welcome!
 
-[build-badge]: https://github.com/mkosir/prisma-next-graphql/actions/workflows/main.yml/badge.svg
-[build-url]: https://github.com/mkosir/prisma-next-graphql/actions/workflows/main.yml
+[build-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/main.yml/badge.svg
+[build-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/main.yml
 [typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
 [typescript-url]: https://github.com/microsoft/TypeScript
