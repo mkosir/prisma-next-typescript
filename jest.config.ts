@@ -11,6 +11,7 @@ const jestConfig: Config = {
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   preset: 'ts-jest',
   moduleDirectories: ['node_modules', 'src'],
+  setupFilesAfterEnv: ['./jest.setup.ts'],
 };
 
 module.exports = createJestConfig(jestConfig);
