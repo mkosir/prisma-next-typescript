@@ -22,7 +22,7 @@ describe('Controllers', () => {
       await prisma.$disconnect();
     });
 
-    it('should destroy the user when endpoint is called', async () => {
+    it('should destroy the user when one exists in database', async () => {
       const { status, data } = await client.delete(pathsApiV1.USERS_DETAILS(userMock.username));
 
       expect(status).toEqual(200);
