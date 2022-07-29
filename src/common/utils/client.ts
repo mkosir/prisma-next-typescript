@@ -1,10 +1,9 @@
-const clientBase = async <T>(path: string, config: RequestInit): Promise<Response & { data: T }> => {
+const clientBase = async <T>(path: string, config: RequestInit): Promise<{ response: Response; data: T }> => {
   const request = new Request(`${process.env.NEXT_PUBLIC_BASE_URL}${path}`, config);
   const response = await fetch(request);
   const data: T = await response.json();
 
-  //@ts-ignore - destructing native fetch response
-  return { ...response[Object.getOwnPropertySymbols(response)[1]], data };
+  return { response, data };
 };
 
 const get = async <T>(path: string, config?: RequestInit) => {

@@ -43,10 +43,9 @@ export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<S
     role: role.value as Role,
   };
 
-  const response = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, body);
+  const { response, data } = await client.post<Prisma.UserCreateInput, null | ResponseError>(pathsApiV1.USERS, body);
 
   if (!response.ok) {
-    const data: ResponseError | Error = await response.json();
     setError(data?.message ?? 'Network error occurred');
     return;
   }
