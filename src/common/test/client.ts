@@ -9,20 +9,20 @@ const clientBase = async <T>(path: string, config: RequestInit): Promise<Respons
   return { ...response[Object.getOwnPropertySymbols(response)[1]], data };
 };
 
-async function get<T>(path: string, config?: RequestInit) {
+const get = async <T>(path: string, config?: RequestInit) => {
   const initConfig = { method: 'GET', ...config };
   return await clientBase<T>(path, initConfig);
-}
+};
 
-async function post<T, U>(path: string, body: T, config?: RequestInit) {
+const post = async <T, U>(path: string, body: T, config?: RequestInit) => {
   const initConfig = { method: 'POST', body: JSON.stringify(body), ...config };
   return await clientBase<U>(path, initConfig);
-}
+};
 
-async function _delete<T>(path: string, config?: RequestInit) {
+const _delete = async <T>(path: string, config?: RequestInit) => {
   const initConfig = { method: 'DELETE', ...config };
   return await clientBase<T>(path, initConfig);
-}
+};
 
 export const client = {
   get,
