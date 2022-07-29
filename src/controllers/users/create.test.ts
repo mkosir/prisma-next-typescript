@@ -18,7 +18,7 @@ describe('Controllers', () => {
     });
 
     it('should create new user when endpoint is called', async () => {
-      const { status, data } = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, { ...userMock });
+      const { status, data } = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, userMock);
 
       expect(status).toEqual(201);
       expect(data).toEqual(null);

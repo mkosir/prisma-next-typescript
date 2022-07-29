@@ -12,11 +12,11 @@ const get = async <T>(path: string, config?: RequestInit) => {
   return await clientBase<T>(path, initConfig);
 };
 
-const post = async <T, U>(path: string, body: T, config?: RequestInit) => {
+const post = async <T, U>(path: string, data: T, config?: RequestInit) => {
   const initConfig = {
     ...config,
     method: 'POST',
-    body: JSON.stringify(body),
+    body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
     },

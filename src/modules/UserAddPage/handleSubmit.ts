@@ -43,7 +43,7 @@ export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<S
     role: role.value as Role,
   };
 
-  const response = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, { ...body });
+  const response = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, body);
 
   if (!response.ok) {
     const data: ResponseError | Error = await response.json();
