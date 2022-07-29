@@ -12,19 +12,13 @@ describe('Controllers', () => {
       name: 'users_create',
     };
 
-    beforeEach(async () => {
-      await prisma.user.create({
-        data: userMock,
-      });
-    });
-
     afterAll(async () => {
       await prisma.$disconnect();
     });
 
     it('should create new user when endpoint is called', async () => {
       const { status, data } = await client.post<Prisma.UserCreateInput, null>(
-        pathsApiV1.USERS_DETAILS(userMock.username),
+        pathsApiV1.USERS,
         { ...userMock },
         {
           headers: {
@@ -35,6 +29,8 @@ describe('Controllers', () => {
 
       expect(status).toEqual(201);
       expect(data).toEqual(null);
+
+      await prisma.user.delete({ where: { email: userMock.email } });
     });
   });
 });
