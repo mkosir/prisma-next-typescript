@@ -18,7 +18,10 @@ describe('Controllers', () => {
     });
 
     it('should create new user when endpoint is called', async () => {
-      const { status, data } = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, userMock);
+      const {
+        response: { status },
+        data,
+      } = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, userMock);
 
       expect(status).toEqual(201);
       expect(data).toEqual(null);
@@ -29,7 +32,10 @@ describe('Controllers', () => {
     it('should throw an error when user already exists', async () => {
       await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, userMock);
 
-      const { status, data } = await client.post<Prisma.UserCreateInput, ResponseError>(pathsApiV1.USERS, userMock);
+      const {
+        response: { status },
+        data,
+      } = await client.post<Prisma.UserCreateInput, ResponseError>(pathsApiV1.USERS, userMock);
 
       expect(status).toEqual(400);
       expect(data).toEqual<ResponseError>({ message: 'An error occurred while creating the user' });

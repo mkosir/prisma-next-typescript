@@ -32,7 +32,10 @@ describe.only('Controllers', () => {
     });
 
     it('should list users when endpoint is called', async () => {
-      const { status, data } = await client.get<ReadonlyArray<User>>(pathsApiV1.USERS);
+      const {
+        response: { status },
+        data,
+      } = await client.get<ReadonlyArray<User>>(pathsApiV1.USERS);
 
       expect(status).toEqual(200);
       expect(data.some((user) => user.email === usersMock[0].email)).toBeTruthy();

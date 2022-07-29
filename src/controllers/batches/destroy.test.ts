@@ -38,7 +38,10 @@ describe('Controllers', () => {
         data: batchMock,
       });
 
-      const { status, data } = await client.delete<null>(pathsApiV1.BATCHES_DETAILS(batchMock.id));
+      const {
+        response: { status },
+        data,
+      } = await client.delete<null>(pathsApiV1.BATCHES_DETAILS(batchMock.id));
 
       expect(status).toEqual(200);
       expect(data).toEqual(null);
@@ -46,7 +49,10 @@ describe('Controllers', () => {
 
     it('should return an error when trying to delete non-existent batch', async () => {
       const id = 'invalid_id';
-      const { status, data } = await client.delete<ResponseError>(pathsApiV1.BATCHES_DETAILS(id));
+      const {
+        response: { status },
+        data,
+      } = await client.delete<ResponseError>(pathsApiV1.BATCHES_DETAILS(id));
 
       expect(status).toEqual(400);
       expect(data).toEqual<ResponseError>({ message: 'An error occurred while deleting the batch' });

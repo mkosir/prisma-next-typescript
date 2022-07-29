@@ -28,7 +28,10 @@ describe('Controllers', () => {
     });
 
     it('should show a user when valid username is provided', async () => {
-      const { status, data } = await client.get<User>(pathsApiV1.USERS_DETAILS(userMock.username));
+      const {
+        response: { status },
+        data,
+      } = await client.get<User>(pathsApiV1.USERS_DETAILS(userMock.username));
 
       expect(status).toEqual(200);
       expect(data.email).toEqual(userMock.email);
@@ -36,7 +39,10 @@ describe('Controllers', () => {
 
     it('should show user not found error when invalid username is provided', async () => {
       const userName = 'invalid_username';
-      const { status, data } = await client.get<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
+      const {
+        response: { status },
+        data,
+      } = await client.get<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
 
       expect(status).toEqual(404);
       expect(data).toEqual<ResponseError>({ message: `Username '${userName}' can't be found` });

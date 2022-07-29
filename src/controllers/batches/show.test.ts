@@ -38,7 +38,10 @@ describe('Controllers', () => {
     });
 
     it('should show a batch when valid id is provided', async () => {
-      const { status, data } = await client.get<Batch>(pathsApiV1.BATCHES_DETAILS(batchMock.id));
+      const {
+        response: { status },
+        data,
+      } = await client.get<Batch>(pathsApiV1.BATCHES_DETAILS(batchMock.id));
 
       expect(status).toEqual(200);
       expect(data.id).toEqual(batchMock.id);
@@ -46,7 +49,10 @@ describe('Controllers', () => {
 
     it('should show batch not found error when invalid id is provided', async () => {
       const id = 'invalid_id';
-      const { status, data } = await client.get<ResponseError>(pathsApiV1.BATCHES_DETAILS(id));
+      const {
+        response: { status },
+        data,
+      } = await client.get<ResponseError>(pathsApiV1.BATCHES_DETAILS(id));
 
       expect(status).toEqual(404);
       expect(data).toEqual<ResponseError>({ message: `Batch id:'${id}' can't be found` });

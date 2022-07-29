@@ -22,7 +22,10 @@ describe('Controllers', () => {
         data: userMock,
       });
 
-      const { status, data } = await client.delete<null>(pathsApiV1.USERS_DETAILS(userMock.username));
+      const {
+        response: { status },
+        data,
+      } = await client.delete<null>(pathsApiV1.USERS_DETAILS(userMock.username));
 
       expect(status).toEqual(200);
       expect(data).toEqual(null);
@@ -30,7 +33,10 @@ describe('Controllers', () => {
 
     it('should return an error when trying to delete non-existent user', async () => {
       const userName = 'invalid_username';
-      const { status, data } = await client.delete<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
+      const {
+        response: { status },
+        data,
+      } = await client.delete<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
 
       expect(status).toEqual(400);
       expect(data).toEqual<ResponseError>({ message: 'An error occurred while deleting the user' });
