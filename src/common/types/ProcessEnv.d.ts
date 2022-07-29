@@ -6,5 +6,6 @@ declare namespace NodeJS {
     POSTGRES_PASSWORD: string;
     POSTGRES_DB: string;
     DATABASE_URL: string;
+    NEXT_PUBLIC_BASE_URL: string;
   }
 }

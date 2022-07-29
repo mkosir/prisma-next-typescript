@@ -1,7 +1,5 @@
 const clientBase = async <T>(path: string, config: RequestInit): Promise<Response & { data: T }> => {
-  const baseUrl = 'http://localhost:3000'; //process.env.NEXT_PUBLIC_BASE_URL
-
-  const request = new Request(`${baseUrl}${path}`, config);
+  const request = new Request(`${process.env.NEXT_PUBLIC_BASE_URL}${path}`, config);
   const response = await fetch(request);
   const data: T = await response.json();
 
