@@ -1,33 +1,42 @@
-import { User } from '@prisma/client';
+import { Prisma, User } from '@prisma/client';
 
 import { pathsApiV1 } from 'common/consts/pathsApi';
-import { testClient } from 'common/test/testClient';
+import { client } from 'common/test/client';
 import prisma from 'prisma/prismaClient';
-import { users } from 'prisma/seed/users';
 
-describe('Controllers', () => {
+describe.only('Controllers', () => {
   describe('Users - List', () => {
+    const usersMock: Array<Prisma.UserCreateInput> = [
+      {
+        email: 'users_list_1@test.com',
+        username: 'users_list_1',
+        name: 'users_list_1',
+      },
+      {
+        email: 'users_list_2@test.com',
+        username: 'users_list_2',
+        name: 'users_list_2',
+      },
+    ];
+
     beforeAll(async () => {
-      await prisma.user.createMany({
-        data: users,
-      });
+      await prisma.user.createMany({ data: usersMock });
     });
 
     afterAll(async () => {
-      const deleteUsers = prisma.user.deleteMany();
+      const deleteUsersMock = prisma.user.deleteMany({ where: { email: { startsWith: 'users_list_' } } });
 
-      await prisma.$transaction([deleteUsers]);
+      await prisma.$transaction([deleteUsersMock]);
 
       await prisma.$disconnect();
     });
 
     it('should list users when endpoint is called', async () => {
-      const { status, data } = await testClient<ReadonlyArray<User>>(pathsApiV1.USERS);
+      const { status, data } = await client.get<ReadonlyArray<User>>(pathsApiV1.USERS);
 
       expect(status).toEqual(200);
-      expect(data[0].email).toEqual(users[0].email);
-      expect(data[0].role).toEqual(users[0].role);
-      expect(data).toHaveLength(users.length);
+      expect(data.some((user) => user.email === usersMock[0].email)).toBeTruthy();
+      expect(data.length).toBeGreaterThanOrEqual(usersMock.length);
     });
   });
 });
