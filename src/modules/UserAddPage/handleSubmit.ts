@@ -5,6 +5,7 @@ import { Dispatch, FormEvent, SetStateAction } from 'react';
 import { paths } from 'common/consts/paths';
 import { pathsApiV1 } from 'common/consts/pathsApi';
 import { ResponseError } from 'common/types/apiV1';
+import { client } from 'common/utils/client';
 
 type FormElements = Readonly<
   {
@@ -42,13 +43,7 @@ export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<S
     role: role.value as Role,
   };
 
-  const response = await fetch(pathsApiV1.USERS, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  });
+  const response = await client.post<Prisma.UserCreateInput, null>(pathsApiV1.USERS, { ...body });
 
   if (!response.ok) {
     const data: ResponseError | Error = await response.json();
