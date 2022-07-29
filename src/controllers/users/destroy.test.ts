@@ -1,6 +1,7 @@
 import { Prisma } from '@prisma/client';
 
 import { pathsApiV1 } from 'common/consts/pathsApi';
+import { ResponseError } from 'common/types/apiV1';
 import { client } from 'common/utils/client';
 import prisma from 'prisma/prismaClient';
 
@@ -12,21 +13,27 @@ describe('Controllers', () => {
       name: 'users_destroy',
     };
 
-    beforeEach(async () => {
-      await prisma.user.create({
-        data: userMock,
-      });
-    });
-
     afterAll(async () => {
       await prisma.$disconnect();
     });
 
     it('should destroy the user when one exists in database', async () => {
-      const { status, data } = await client.delete(pathsApiV1.USERS_DETAILS(userMock.username));
+      await prisma.user.create({
+        data: userMock,
+      });
+
+      const { status, data } = await client.delete<null>(pathsApiV1.USERS_DETAILS(userMock.username));
 
       expect(status).toEqual(200);
       expect(data).toEqual(null);
+    });
+
+    it('should return an error when trying to delete non-existent user', async () => {
+      const userName = 'not_existing_username';
+      const { status, data } = await client.delete<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
+
+      expect(status).toEqual(400);
+      expect(data).toEqual<ResponseError>({ message: 'An error occurred while deleting the user' });
     });
   });
 });
