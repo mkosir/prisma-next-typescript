@@ -7,9 +7,9 @@ import prisma from 'prisma/prismaClient';
 describe('Controllers', () => {
   describe('Users - Destroy', () => {
     const userMock: Prisma.UserCreateInput = {
-      email: 'user_destroy@test.com',
-      username: 'user_destroy',
-      name: 'user_destroy',
+      email: 'users_destroy@test.com',
+      username: 'users_destroy',
+      name: 'users_destroy',
     };
 
     beforeEach(async () => {

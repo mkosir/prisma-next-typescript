@@ -7,7 +7,11 @@ import prisma from 'prisma/prismaClient';
 
 describe('Controllers', () => {
   describe('Users - Show', () => {
-    const userMock: Prisma.UserCreateInput = { email: 'user_show@test.com', username: 'user_show', name: 'user_show' };
+    const userMock: Prisma.UserCreateInput = {
+      email: 'users_show@test.com',
+      username: 'users_show',
+      name: 'users_show',
+    };
 
     beforeAll(async () => {
       await prisma.user.create({
