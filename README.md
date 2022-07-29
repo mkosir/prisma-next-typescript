@@ -1,8 +1,7 @@
-# Prisma / Next.js / TypeScript boilerplate
+# Prisma / Next.js / TypeScript boilerplate ![Heisenberg](misc/heisenberg.png)
 
 [![CI][build-badge]][build-url]
 [![TypeScript][typescript-badge]][typescript-url]
-![Heisenberg](misc/heisenberg.png)
 
 Boilerplate with focus on best practices and painless developer experience:
 
