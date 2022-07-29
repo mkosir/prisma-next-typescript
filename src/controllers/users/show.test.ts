@@ -1,6 +1,6 @@
 import { Prisma, User } from '@prisma/client';
 
-import { pathsApiV1 } from 'common/consts/pathsApi';
+import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { ResponseError } from 'common/types/apiV1';
 import { client } from 'common/utils/client';
 import prisma from 'prisma/prismaClient';
@@ -27,15 +27,15 @@ describe('Controllers', () => {
       await prisma.$disconnect();
     });
 
-    it('should show a new user when valid username is provided', async () => {
+    it('should show a user when valid username is provided', async () => {
       const { status, data } = await client.get<User>(pathsApiV1.USERS_DETAILS(userMock.username));
 
       expect(status).toEqual(200);
       expect(data.email).toEqual(userMock.email);
     });
 
-    it('should show user not found when invalid username is provided', async () => {
-      const userName = 'not_existing_username';
+    it('should show user not found error when invalid username is provided', async () => {
+      const userName = 'invalid_username';
       const { status, data } = await client.get<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
 
       expect(status).toEqual(404);

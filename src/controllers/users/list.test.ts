@@ -1,6 +1,6 @@
 import { Prisma, User } from '@prisma/client';
 
-import { pathsApiV1 } from 'common/consts/pathsApi';
+import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { client } from 'common/utils/client';
 import prisma from 'prisma/prismaClient';
 
@@ -8,14 +8,14 @@ describe.only('Controllers', () => {
   describe('Users - List', () => {
     const usersMock: Array<Prisma.UserCreateInput> = [
       {
-        email: 'users_list_1@test.com',
-        username: 'users_list_1',
-        name: 'users_list_1',
+        email: 'users_list-1@test.com',
+        username: 'users_list-1',
+        name: 'users_list-1',
       },
       {
-        email: 'users_list_2@test.com',
-        username: 'users_list_2',
-        name: 'users_list_2',
+        email: 'users_list-2@test.com',
+        username: 'users_list-2',
+        name: 'users_list-2',
       },
     ];
 
@@ -24,7 +24,7 @@ describe.only('Controllers', () => {
     });
 
     afterAll(async () => {
-      const deleteUsersMock = prisma.user.deleteMany({ where: { email: { startsWith: 'users_list_' } } });
+      const deleteUsersMock = prisma.user.deleteMany({ where: { email: { startsWith: 'users_list' } } });
 
       await prisma.$transaction([deleteUsersMock]);
 

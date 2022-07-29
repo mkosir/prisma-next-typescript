@@ -3,7 +3,7 @@ import Router from 'next/router';
 import { Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { paths } from 'common/consts/paths';
-import { pathsApiV1 } from 'common/consts/pathsApi';
+import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { ResponseError } from 'common/types/apiV1';
 import { client } from 'common/utils/client';
 

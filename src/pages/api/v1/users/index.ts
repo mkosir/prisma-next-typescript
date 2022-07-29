@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { create, CreateResponse } from '../../../../controllers/users/create';
-import { list, ListResponse } from '../../../../controllers/users/list';
+import { create, CreateResponse } from 'controllers/users/create';
+import { list, ListResponse } from 'controllers/users/list';
 
 type UsersResponse = ListResponse | CreateResponse;
 

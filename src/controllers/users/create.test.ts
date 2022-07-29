@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client';
 
-import { pathsApiV1 } from 'common/consts/pathsApi';
+import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { ResponseError } from 'common/types/apiV1';
 import { client } from 'common/utils/client';
 import prisma from 'prisma/prismaClient';

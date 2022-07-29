@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client';
 
-import { pathsApiV1 } from 'common/consts/pathsApi';
+import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { ResponseError } from 'common/types/apiV1';
 import { client } from 'common/utils/client';
 import prisma from 'prisma/prismaClient';
@@ -17,7 +17,7 @@ describe('Controllers', () => {
       await prisma.$disconnect();
     });
 
-    it('should destroy the user when one exists in database', async () => {
+    it('should destroy the user when one exists in a database', async () => {
       await prisma.user.create({
         data: userMock,
       });
@@ -29,7 +29,7 @@ describe('Controllers', () => {
     });
 
     it('should return an error when trying to delete non-existent user', async () => {
-      const userName = 'not_existing_username';
+      const userName = 'invalid_username';
       const { status, data } = await client.delete<ResponseError>(pathsApiV1.USERS_DETAILS(userName));
 
       expect(status).toEqual(400);
