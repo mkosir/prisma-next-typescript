@@ -22,6 +22,7 @@ _Easily set up a local development environment_
 - clone the repo
 - `npm run db-start` - Creates Postgres database container instance seeded with Breaking Bad characters and batches 💊 (default credentials `user=walter`, `password=white` [.env file](./envs/dev.env))
 - `npm run dev` - Start NextJs 🚀
+- `npm run test-integration` - Run integration test 🧪
 
 Visit [localhost:3000](http://localhost:3000/)
 
