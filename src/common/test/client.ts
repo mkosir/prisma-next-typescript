@@ -10,17 +10,24 @@ const clientBase = async <T>(path: string, config: RequestInit): Promise<Respons
 };
 
 const get = async <T>(path: string, config?: RequestInit) => {
-  const initConfig = { method: 'GET', ...config };
+  const initConfig = { ...config, method: 'GET' };
   return await clientBase<T>(path, initConfig);
 };
 
 const post = async <T, U>(path: string, body: T, config?: RequestInit) => {
-  const initConfig = { method: 'POST', body: JSON.stringify(body), ...config };
+  const initConfig = {
+    ...config,
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
   return await clientBase<U>(path, initConfig);
 };
 
 const _delete = async <T>(path: string, config?: RequestInit) => {
-  const initConfig = { method: 'DELETE', ...config };
+  const initConfig = { ...config, method: 'DELETE' };
   return await clientBase<T>(path, initConfig);
 };
 
