@@ -1,6 +1,6 @@
 {
-  "name": "prisma-next-graphql",
-  "description": "Minimal GraphQL boilerplate with Prisma and Next.js",
+  "name": "prisma-next-typescript-boilerplate",
+  "description": "Minimal RESTful API boilerplate with Prisma, Next.js and TypeScript",
   "version": "0.0.0-development",
   "scripts": {
     "dev": "env-cmd -f envs/dev.env next dev",
