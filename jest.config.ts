@@ -7,8 +7,6 @@ const createJestConfig = nextJest({
 
 const jestConfig: Config = {
   testEnvironment: 'node',
-  collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   preset: 'ts-jest',
   moduleDirectories: ['node_modules', 'src'],
   setupFilesAfterEnv: ['./jest.setup.ts'],
