@@ -15,7 +15,6 @@
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
     "commit": "git-cz",
     "test-integration": "jest --verbose --watch",
-    "test-integration-coverage": "jest --coverage --verbose",
     "db-start": "docker-compose up",
     "db-view": "env-cmd -f envs/dev.env npx prisma studio",
     "db-migration-generate": "env-cmd -f envs/dev.env npx prisma migrate dev",
