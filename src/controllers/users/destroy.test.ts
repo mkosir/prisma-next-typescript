@@ -1,7 +1,7 @@
 import { Prisma } from '@prisma/client';
 
 import { pathsApiV1 } from 'common/consts/pathsApi';
-import { client } from 'common/test/client';
+import { client } from 'common/utils/client';
 import prisma from 'prisma/prismaClient';
 
 describe('Controllers', () => {
