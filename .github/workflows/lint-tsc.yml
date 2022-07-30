@@ -1,4 +1,4 @@
-name: main
+name: lint-tsc
 
 on: push
 
@@ -26,6 +26,3 @@ jobs:
 
       - name: Lint ✅
         run: npm run lint
-
-      - name: Build 🏗️
-        run: npm run build
