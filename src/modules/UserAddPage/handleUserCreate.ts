@@ -25,7 +25,7 @@ type AddUserForm = Readonly<
 
 export type AddUserFormEvent = FormEvent<AddUserForm>;
 
-export const handleSubmit = async (event: AddUserFormEvent, setError: Dispatch<SetStateAction<string | null>>) => {
+export const handleUserCreate = async (event: AddUserFormEvent, setError: Dispatch<SetStateAction<string | null>>) => {
   event.preventDefault();
   setError(null);
 

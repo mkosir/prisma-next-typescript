@@ -21,10 +21,10 @@ export const UserCard = ({ user }: UserCardProps) => {
     ? `${Prisma.Decimal.div(Prisma.Decimal.sum(...purities), purities.length).toFixed(2)}%`
     : '-';
 
-  const handleDeleteUser = (username: string) => console.log('🔎 Log ~ UserCard ~ username', username);
+  const handleUserDelete = (username: string) => console.log('🔎 Log ~ UserCard ~ username', username);
 
   return (
-    <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} scale={1.04} style={{ minWidth: '360px', maxWidth: '400px' }}>
+    <Tilt tiltMaxAngleX={8} tiltMaxAngleY={6} scale={1.04} style={{ minWidth: '360px', maxWidth: '400px' }}>
       <div
         style={{
           backgroundColor: '#64b0ce17',
@@ -71,10 +71,10 @@ export const UserCard = ({ user }: UserCardProps) => {
           <div
             role="button"
             tabIndex={0}
-            onClick={() => handleDeleteUser(user.username)}
+            onClick={() => handleUserDelete(user.username)}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
-                handleDeleteUser(user.username);
+                handleUserDelete(user.username);
               }
             }}
             className={styles.deleteButton}

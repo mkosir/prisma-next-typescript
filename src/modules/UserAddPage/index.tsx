@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Input, Select } from 'common/components';
 
-import { AddUserFormEvent, handleSubmit } from './handleSubmit';
+import { AddUserFormEvent, handleUserCreate } from './handleUserCreate';
 
 export const UserAddPage = () => {
   const [error, setError] = useState<string | null>(null);
@@ -11,7 +11,7 @@ export const UserAddPage = () => {
   return (
     <div>
       <h3>➕ Add User</h3>
-      <form onSubmit={(event) => handleSubmit(event as AddUserFormEvent, setError)} style={{ maxWidth: '200px' }}>
+      <form onSubmit={(event) => handleUserCreate(event as AddUserFormEvent, setError)} style={{ maxWidth: '200px' }}>
         <Input id="email" label="*Email:" />
         <Input id="name" label="*Name:" />
         <Input id="username" label="*Username:" />
