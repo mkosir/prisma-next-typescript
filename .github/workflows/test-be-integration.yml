@@ -3,7 +3,7 @@ name: test-be-integration
 on: push
 
 jobs:
-  validate:
+  test-be-integration:
     runs-on: ubuntu-latest
 
     steps:

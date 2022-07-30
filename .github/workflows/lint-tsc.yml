@@ -3,7 +3,7 @@ name: lint-tsc
 on: push
 
 jobs:
-  validate:
+  lint-tsc:
     runs-on: ubuntu-latest
 
     steps:
