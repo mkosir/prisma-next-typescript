@@ -1,8 +1,12 @@
 import { Prisma } from '@prisma/client';
+import Router from 'next/router';
 import Tilt from 'react-parallax-tilt';
 
 import { Link } from 'common/components';
 import { paths } from 'common/consts/paths';
+import { pathsApiV1 } from 'common/consts/pathsApiV1';
+import { ResponseError } from 'common/types/apiV1';
+import { client } from 'common/utils/client';
 import { ServerSidePropsUsers } from 'pages/users';
 
 import styles from './styles.module.css';
@@ -21,7 +25,11 @@ export const UserCard = ({ user }: UserCardProps) => {
     ? `${Prisma.Decimal.div(Prisma.Decimal.sum(...purities), purities.length).toFixed(2)}%`
     : '-';
 
-  const handleUserDelete = (username: string) => console.log('🔎 Log ~ UserCard ~ username', username);
+  const handleUserDelete = async (username: string) => {
+    await client.delete<null | ResponseError>(pathsApiV1.USERS_DETAILS(username));
+
+    Router.push(paths.USERS);
+  };
 
   return (
     <Tilt tiltMaxAngleX={8} tiltMaxAngleY={6} scale={1.04} style={{ minWidth: '360px', maxWidth: '400px' }}>
