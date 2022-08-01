@@ -9,7 +9,7 @@ runs:
         node-version: '18.x'
 
     - name: Cache dependencies ⚡
-      id: cache
+      id: cache_dependencies
       uses: actions/cache@v3
       with:
         path: node_modules
@@ -17,5 +17,5 @@ runs:
 
     - name: Install dependencies 🔧
       shell: bash
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache_dependencies.outputs.cache-hit != 'true'
       run: npm ci
