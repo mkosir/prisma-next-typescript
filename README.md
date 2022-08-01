@@ -8,7 +8,8 @@ Boilerplate with focus on best practices and painless developer experience:
 
 - Minimal setup that can be extended 🔧 _(no UI, fetching, validation, lodash... utility libraries 🎉)_
 - Easily spin up local dev environment 🌀
-- End-To-End type safety with TypeScript
+- RESTful APIs
+- End-To-End type safety with TypeScript (Database <-> API <-> Frontend)
 
 ## Requirements
 
