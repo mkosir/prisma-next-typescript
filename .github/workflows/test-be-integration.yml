@@ -20,6 +20,8 @@ jobs:
         ports:
           - 5432:5432
 
+    env:
+      DATABASE_URL: postgresql://walter:white@localhost:5432/boilerplate?schema=public
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
