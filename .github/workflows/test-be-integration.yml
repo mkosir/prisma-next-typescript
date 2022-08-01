@@ -22,6 +22,7 @@ jobs:
 
     env:
       DATABASE_URL: postgresql://walter:white@localhost:5432/boilerplate?schema=public
+      NEXT_PUBLIC_BASE_URL: http://localhost:3000
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
