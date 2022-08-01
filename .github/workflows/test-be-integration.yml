@@ -40,5 +40,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
+      - name: Migrate database 📦
+        run: npm run db-migration-run
+
       - name: Test - BE Integration 🚨
         run: npm run test-be-integration
