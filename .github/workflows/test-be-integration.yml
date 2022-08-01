@@ -41,7 +41,7 @@ jobs:
         run: npm ci
 
       - name: Migrate database 📦
-        run: npm prisma migrate dev
+        run: npm prisma migrate deploy
 
       - name: Test - BE Integration 🚨
         run: npm run test-be-integration-dev
