@@ -27,7 +27,6 @@ jobs:
         uses: ./.github/workflows/actions/setup_node-cache_dep-install_dep
 
       - name: Cache build ⚡
-        id: cache_build
         uses: actions/cache@v3
         with:
           path: |
