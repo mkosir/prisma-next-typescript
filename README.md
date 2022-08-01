@@ -23,7 +23,6 @@ _Easily set up a local development environment_
 - clone the repo
 - `npm run db-start` - Creates Postgres database container instance seeded with Breaking Bad characters and batches 💊 (default credentials `user=walter`, `password=white` [.env file](./envs/dev.env))
 - `npm run dev` - Start NextJs 🚀
-- `npm run test-integration` - Run integration test 🧪
 
 Visit [localhost:3000](http://localhost:3000/)
 
@@ -33,7 +32,7 @@ Visit [localhost:3000](http://localhost:3000/)
 - [TypeScript v4](https://github.com/microsoft/TypeScript) codebase
 - [NextJs](https://github.com/vercel/next.js) RESTful API
 - Unit and integration tests with [Jest](https://github.com/facebook/jest)
-- Easily start local development using [Docker Compose](https://docs.docker.com/compose/) with spinning up seeded database `npm run db-start`
+- Easily start local development using [Docker Compose](https://docs.docker.com/compose/) by spinning up seeded database `npm run db-start`
 - Linting with [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/) code formatter
 - Git hooks with [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
