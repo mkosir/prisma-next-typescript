@@ -32,6 +32,13 @@ Visit [localhost:3000](http://localhost:3000/)
 - [Prisma v4](https://www.prisma.io/) ORM
 - [TypeScript v4](https://github.com/microsoft/TypeScript) codebase
 - [NextJs](https://github.com/vercel/next.js) RESTful API
+- Unit and integration tests with [Jest](https://github.com/facebook/jest)
+- Easily start local development using [Docker Compose](https://docs.docker.com/compose/) with spinning up seeded database `npm run db-start`
+- Linting with [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/) code formatter
+- Git hooks with [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
+- Commit messages must meet [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) format.  
+  After staging changes just run `npm run commit` and get instant feedback on your commit message formatting and be prompted for required fields by [Commitizen](https://github.com/commitizen/cz-cli)
 
 ## Contributing
 
