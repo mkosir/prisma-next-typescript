@@ -3,6 +3,7 @@ description: 'Checks out the repository and does something'
 runs:
   using: 'composite'
   steps:
-    - run: |
-        echo "Executing action"
-      shell: bash
+    - name: Setup Node.js ⚙️
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
