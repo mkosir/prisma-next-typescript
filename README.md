@@ -1,7 +1,7 @@
 # Prisma / Next.js / TypeScript boilerplate ![Heisenberg](misc/heisenberg.png)
 
 [![CI][build-badge]][build-url]
-[![CI][integration-tests-badge]][integration-tests-url]
+[![CI][test-be-integration-badge]][test-be-integration-url]
 [![TypeScript][typescript-badge]][typescript-url]
 
 Boilerplate with focus on best practices and painless developer experience:
@@ -38,7 +38,7 @@ All contributions are welcome!
 
 [build-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/build.yml/badge.svg
 [build-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/build.yml
-[integration-tests-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/test-be-integration.yml/badge.svg
-[integration-tests-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/test-be-integration.yml
+[test-be-integration-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/test-be-integration.yml/badge.svg
+[test-be-integration-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/test-be-integration.yml
 [typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
 [typescript-url]: https://github.com/microsoft/TypeScript
