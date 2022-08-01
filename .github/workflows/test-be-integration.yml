@@ -6,6 +6,20 @@ jobs:
   test-be-integration:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:14.4-alpine
+        env:
+          POSTGRES_USER: walter
+          POSTGRES_PASSWORD: white
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
