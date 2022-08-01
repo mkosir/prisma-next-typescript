@@ -10,12 +10,8 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - uses: ./.github/workflows/actions/checkout-node
-
-      - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
+      - name: Checkout 🛎️ & Setup Node.js ⚙️
+        uses: ./.github/workflows/actions/checkout-node
 
       - name: Cache dependencies ⚡
         id: cache
