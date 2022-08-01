@@ -1,5 +1,5 @@
-name: 'Composite action - node'
-description: 'Checks out the repository and does something'
+name: 'setup_node-cache_dep-install_dep'
+description: 'Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧'
 runs:
   using: 'composite'
   steps:
