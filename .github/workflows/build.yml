@@ -45,8 +45,11 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/prisma/schema.prisma') }}
+          path: |
+            node_modules
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: node-modules-nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/prisma/schema.prisma') }}-${{ hashFiles('**.ts', '**.tsx') }}
 
       - name: Install dependencies 🔧
         if: steps.cache.outputs.cache-hit != 'true'
