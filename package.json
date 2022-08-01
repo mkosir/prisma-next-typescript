@@ -1,5 +1,5 @@
 {
-  "name": "prisma-next-typeXscript-boilerplate",
+  "name": "prisma-next-typescript-boilerplate",
   "description": "Minimal RESTful API boilerplate with Prisma, Next.js and TypeScript",
   "version": "0.0.0-development",
   "scripts": {
