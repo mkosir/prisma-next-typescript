@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
-        uses: ./.github/workflows/actions/checkout-node
+        uses: .github/workflows/actions/checkout-node
 
       - name: Lint ✅
         run: npm run lint
