@@ -1,9 +1,9 @@
-name: lint-tsc
+name: build
 
 on: push
 
 jobs:
-  lint-tsc:
+  build:
     runs-on: ubuntu-latest
 
     steps:
