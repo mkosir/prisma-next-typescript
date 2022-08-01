@@ -10,7 +10,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - uses: .github/workflows/composite-actions/checkout-node@v1
+      - uses: ./.github/workflows/composite-actions/checkout-node@v1
 
       - name: Setup Node.js ⚙️
         uses: actions/setup-node@v3
