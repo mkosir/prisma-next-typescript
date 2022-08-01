@@ -49,5 +49,5 @@ jobs:
       - name: Start Next.js ⚛️
         run: npm run dev 2>&1 > /dev/null &
 
-      - name: Test - BE Integration 🚨
+      - name: Test - BE Integration 🧪
         run: npm run test-be-integration
