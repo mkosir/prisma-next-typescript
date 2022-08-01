@@ -26,5 +26,5 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Lint ✅
-        run: npm run lint
+      - name: Test - BE Integration 🚨
+        run: npm run test-be-integration
