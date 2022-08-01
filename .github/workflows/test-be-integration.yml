@@ -46,5 +46,8 @@ jobs:
       - name: Migrate database 📦
         run: npx prisma migrate deploy
 
+      - name: Start Next.js ⚛️
+        run: npm run dev
+
       - name: Test - BE Integration 🚨
         run: npm run test-be-integration
