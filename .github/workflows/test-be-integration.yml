@@ -47,7 +47,7 @@ jobs:
         run: npx prisma migrate deploy
 
       - name: Start Next.js ⚛️
-        run: npm run dev
+        run: npm run dev 2>&1 > /dev/null &
 
       - name: Test - BE Integration 🚨
         run: npm run test-be-integration
