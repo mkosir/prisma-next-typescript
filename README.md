@@ -35,7 +35,7 @@ Visit [localhost:3000](http://localhost:3000/)
 
 All contributions are welcome!
 
-[build-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/lint-tsc.yml/badge.svg
-[build-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/lint-tsc.yml
+[build-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/build.yml
 [typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
 [typescript-url]: https://github.com/microsoft/TypeScript
