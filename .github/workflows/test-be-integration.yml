@@ -44,4 +44,4 @@ jobs:
         run: npm run db-migration-run
 
       - name: Test - BE Integration 🚨
-        run: npm run test-be-integration
+        run: npm run test-be-integration-dev
