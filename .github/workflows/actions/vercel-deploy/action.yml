@@ -30,7 +30,7 @@ runs:
         if [[ ${inputs.environment} == "production" ]]; then
           prodRun="--prod"
         fi
-        vercel build $prodRun --token=${{ inputs.vercel-token }}
+        vercel build --token=${{ inputs.vercel-token }} $prodRun
 
     - name: Deploy Project Artifacts to Vercel 🚀
       shell: bash
@@ -40,4 +40,4 @@ runs:
            prodRun="--prod"
          fi
 
-         vercel deploy --prebuilt $prodRun --token=${{ inputs.vercel-token }}
+         vercel deploy --prebuilt --token=${{ inputs.vercel-token }} $prodRun
