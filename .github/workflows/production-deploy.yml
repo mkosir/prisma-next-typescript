@@ -1,15 +1,10 @@
 name: production-deploy
 
-# on:
-#   workflow_run:
-#     workflows: [test-be-integration]
-#     types: [completed]
-#     branches: [main]
-
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [test-be-integration]
+    types: [completed]
+    branches: [main]
 
 jobs:
   production-deploy:
@@ -18,11 +13,6 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-
-      # - name: Vercel production deploy 🚀
-      #   uses: ./.github/workflows/actions/setup_node-cache_dep-install_dep
-      #   with:
-      #     environment: 'Mona the Octocat'
 
       - name: Install Vercel CLI 🔧
         run: npm install --global vercel@latest
