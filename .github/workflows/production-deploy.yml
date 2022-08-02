@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Vercel Production Deploy 🚀
-        uses: ./.github/workflows/actions/setup_node-cache_dep-install_dep
+        uses: ./.github/workflows/actions/vercel-deploy
         with:
           environment: 'production'
 
