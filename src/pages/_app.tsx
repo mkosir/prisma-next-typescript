@@ -14,9 +14,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <div style={{ textAlign: 'center', margin: '15px 0 40px' }}>
         <img src="/heisenberg.png" alt="heisenberg" width={85} />
-        <div style={{ fontSize: '22px', fontWeight: 'bold' }}>
-          X2Minimal boilerplate - Prisma / Next.js / TypeScript
-        </div>
+        <div style={{ fontSize: '22px', fontWeight: 'bold' }}>Minimal boilerplate - Prisma / Next.js / TypeScript</div>
       </div>
       <Breadcrumbs />
       <Component {...pageProps} />
