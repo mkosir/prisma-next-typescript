@@ -1,4 +1,4 @@
-export const NotFound404Page = () => {
+export const Status404Page = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '100px' }}>
       <h2>404</h2>

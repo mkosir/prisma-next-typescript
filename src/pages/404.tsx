@@ -1,5 +1,5 @@
-import { NotFound404Page } from 'modules';
+import { Status404Page } from 'modules';
 
-const NotFound404 = () => <NotFound404Page />;
+const Status404 = () => <Status404Page />;
 
-export default NotFound404;
+export default Status404;
