@@ -1,15 +1,10 @@
 name: production-deploy
 
-# on:
-#   workflow_run:
-#     workflows: [test-be-integration]
-#     types: [completed]
-#     branches: [main]
-
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [test-be-integration]
+    types: [completed]
+    branches: [main]
 
 jobs:
   production-deploy:
