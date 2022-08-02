@@ -9,12 +9,6 @@ inputs:
   vercel-token:
     description: 'Vercel token'
     required: true
-  vercel-org-id:
-    description: 'Vercel org. id'
-    required: true
-  vercel-project-id:
-    description: 'Vercel project id'
-    required: true
 
 runs:
   using: 'composite'
