@@ -23,17 +23,6 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      # - naXme: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
-      #   uses: ./.github/workflows/actions/setup_node-cache_dep-install_dep
-
-      # - name: Cache build ⚡
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: |
-      #       ~/.npm
-      #       ${{ github.workspace }}/.next/cache
-      #     key: nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/prisma/schema.prisma') }}-${{ hashFiles('**.ts', '**.tsx') }}
-
       - name: Install Vercel CLI 🔧
         run: npm install --global vercel@latest
 
