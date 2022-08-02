@@ -27,7 +27,7 @@ runs:
       shell: bash
       run: |
         prodRun=""
-        if [[ ${inputs.environment} == "production" ]]; then
+        if [[ ${{ inputs.environment }} == "production" ]]; then
           prodRun="--prod"
         fi
         vercel build --token=${{ inputs.vercel-token }} $prodRun
@@ -36,7 +36,7 @@ runs:
       shell: bash
       run: |
         prodRun=""
-         if [[ ${inputs.environment} == "production" ]]; then
+         if [[ ${{ inputs.environment }} == "production" ]]; then
            prodRun="--prod"
          fi
 
