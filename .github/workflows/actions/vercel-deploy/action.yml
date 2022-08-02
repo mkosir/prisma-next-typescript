@@ -17,13 +17,13 @@ runs:
     - name: Pull Vercel Environment Information ⬇️
       shell: bash
       run: |
-        vercel pull --yes --environment=${{ inputs.environment }} --token=${{ secrets.VERCEL_TOKEN }}
+        vercel pull --yes --environment=${{ inputs.environment }} --token=${{ vercel-token }}
         echo "Log inputs.environment: ${{ inputs.environment }}"
 
     - name: Build Project Artifacts 🏗️
       shell: bash
-      run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      run: vercel build --prod --token=${{ vercel-token }}
 
     - name: Deploy Project Artifacts to Vercel 🚀
       shell: bash
-      run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      run: vercel deploy --prebuilt --prod --token=${{ vercel-token }}

@@ -23,6 +23,7 @@ jobs:
         uses: ./.github/workflows/actions/vercel-deploy
         with:
           environment: 'production'
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
 
       # - name: Install Vercel CLI 🔧
       #   run: npm install --global vercel@latest
