@@ -3,7 +3,7 @@ description: 'Vercel deploy'
 
 inputs:
   environment:
-    description: 'Environment'
+    description: "Environment to deploy 'production' | 'preview'"
     required: false
     default: 'preview'
   vercel-token:
