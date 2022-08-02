@@ -1,4 +1,4 @@
-name: preview-deploy
+name: deploy-preview
 
 on:
   workflow_run:
@@ -7,15 +7,15 @@ on:
     branches-ignore: [main]
 
 jobs:
-  preview-deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Vercel Preview Deploy 🚀
-        uses: ./.github/workflows/actions/vercel-deploy
+      - name: Deploy to Vercel - Preview 🚀
+        uses: ./.github/workflows/actions/deploy-vercel
         with:
           environment: 'preview'
           vercel-token: ${{ secrets.VERCEL_TOKEN }}

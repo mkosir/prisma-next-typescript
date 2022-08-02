@@ -1,5 +1,5 @@
-name: 'vercel-deploy'
-description: 'Vercel deploy'
+name: 'deploy-vercel'
+description: 'Deploy to Vercel'
 
 inputs:
   environment:

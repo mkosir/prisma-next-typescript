@@ -1,4 +1,4 @@
-name: production-deploy
+name: deploy-production
 
 on:
   workflow_run:
@@ -7,15 +7,15 @@ on:
     branches: [main]
 
 jobs:
-  production-deploy:
+  deploy-production:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Vercel Production Deploy 🚀
-        uses: ./.github/workflows/actions/vercel-deploy
+      - name: Deploy to Vercel - Production  🚀
+        uses: ./.github/workflows/actions/deploy-vercel
         with:
           environment: 'production'
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
