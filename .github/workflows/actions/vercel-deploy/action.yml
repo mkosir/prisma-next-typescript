@@ -6,6 +6,15 @@ inputs:
     description: 'Environment'
     required: true
     default: 'preview'
+  vercel-token:
+    description: 'Vercel token'
+    required: true
+  vercel-org-id:
+    description: 'Vercel org. id'
+    required: true
+  vercel-project-id:
+    description: 'Vercel project id'
+    required: true
 
 runs:
   using: 'composite'
@@ -17,13 +26,13 @@ runs:
     - name: Pull Vercel Environment Information ⬇️
       shell: bash
       run: |
-        vercel pull --yes --environment=${{ inputs.environment }} --token=${{ vercel-token }}
+        vercel pull --yes --environment=${{ inputs.environment }} --token=${{ inputs.vercel-token }}
         echo "Log inputs.environment: ${{ inputs.environment }}"
 
     - name: Build Project Artifacts 🏗️
       shell: bash
-      run: vercel build --prod --token=${{ vercel-token }}
+      run: vercel build --prod --token=${{ inputs.vercel-token }}
 
     - name: Deploy Project Artifacts to Vercel 🚀
       shell: bash
-      run: vercel deploy --prebuilt --prod --token=${{ vercel-token }}
+      run: vercel deploy --prebuilt --prod --token=${{ inputs.vercel-token }}
