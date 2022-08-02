@@ -19,9 +19,7 @@ runs:
 
     - name: Pull Vercel Environment Information ⬇️
       shell: bash
-      run: |
-        vercel pull --yes --environment=${{ inputs.environment }} --token=${{ inputs.vercel-token }}
-        echo "Log inputs.environment: ${{ inputs.environment }}"
+      run: vercel pull --yes --environment=${{ inputs.environment }} --token=${{ inputs.vercel-token }}
 
     - name: Build Project Artifacts 🏗️
       shell: bash
@@ -39,5 +37,4 @@ runs:
          if [[ ${{ inputs.environment }} == "production" ]]; then
            prodRun="--prod"
          fi
-
          vercel deploy --prebuilt --token=${{ inputs.vercel-token }} $prodRun
