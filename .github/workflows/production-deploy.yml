@@ -19,6 +19,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      # - name: Vercel production deploy 🚀
+      #   uses: ./.github/workflows/actions/setup_node-cache_dep-install_dep
+      #   with:
+      #     environment: 'Mona the Octocat'
+
       - name: Install Vercel CLI 🔧
         run: npm install --global vercel@latest
 
@@ -26,7 +31,7 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts 🏗️
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel 🚀
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --production --token=${{ secrets.VERCEL_TOKEN }}
