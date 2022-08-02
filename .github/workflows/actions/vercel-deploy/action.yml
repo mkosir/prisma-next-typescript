@@ -1,0 +1,29 @@
+name: 'vercel-deploy'
+description: 'Vercel deploy'
+
+inputs:
+  environment:
+    description: 'Environment'
+    required: true
+    default: 'preview'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Vercel CLI 🔧
+      shell: bash
+      run: npm install --global vercel@latest
+
+    - name: Pull Vercel Environment Information ⬇️
+      shell: bash
+      run: |
+        vercel pull --yes --environment=${{ inputs.environment }} --token=${{ secrets.VERCEL_TOKEN }}
+        echo "Log inputs.environment: ${{ inputs.environment }}"
+
+    - name: Build Project Artifacts 🏗️
+      shell: bash
+      run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+    - name: Deploy Project Artifacts to Vercel 🚀
+      shell: bash
+      run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
