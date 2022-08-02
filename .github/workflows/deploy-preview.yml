@@ -5,7 +5,7 @@ on:
     workflows: [test-be-integration]
     types: [completed]
     branches-ignore:
-      - 'main'
+      - main
 
 jobs:
   deploy-preview:
