@@ -23,7 +23,7 @@ export const seed = async (_req: NextApiRequestExtended, res: NextApiResponse<Se
     // await prisma.batch.createMany({ data: batches, skipDuplicates: true });
     for (const batch of batches) {
       const existingBatch = await prisma.batch.findUnique({ where: { id: batch.id } });
-      if (existingBatch) {
+      if (existingBatch === null) {
         await prisma.batch.create({ data: batch });
       }
     }
