@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="💊 Minimal RESTful API boilerplate with Prisma, Next.js and TypeScript" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div style={{ textAlign: 'center', margin: '15px 0 40px' }}>
+      <div style={{ textAlign: 'center', margin: '15px 0 30px' }}>
         <img src="/heisenberg.png" alt="heisenberg" width={85} />
         <div style={{ fontSize: '22px', fontWeight: 'bold' }}>Minimal boilerplate - Prisma / Next.js / TypeScript</div>
       </div>

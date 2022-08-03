@@ -14,3 +14,15 @@ body {
   --color-blue-sky-400: #64b0ce;
   --color-blue-sky-500: #3d9cc2;
 }
+
+h1,
+h2 {
+  margin: 15px 0;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+}
