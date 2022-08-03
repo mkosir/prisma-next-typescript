@@ -12,8 +12,8 @@ jobs:
   deploy-production:
     runs-on: ubuntu-latest
 
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+    # env:
+    #   DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
 
     steps:
       - name: Checkout 🛎️
