@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
-import { Link } from 'common/components';
+import { Link, Progress } from 'common/components';
 import { paths } from 'common/consts/paths';
 import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { ResponseError } from 'common/types/apiV1';
 import { client } from 'common/utils/client';
 
 export const HomePage = () => {
-  const [isSeeding, setIsSeeding] = useState<boolean>(false);
+  const [isSeedingDb, setIsSeedingDb] = useState<boolean>(false);
 
   const seedDb = async () => {
-    setIsSeeding(true);
+    setIsSeedingDb(true);
     await client.post<null, null | ResponseError>(pathsApiV1.DATABASES, null);
-    setIsSeeding(false);
+    setIsSeedingDb(false);
   };
 
   return (
@@ -29,14 +29,14 @@ export const HomePage = () => {
             backgroundColor: '#3d9cc23b',
             padding: '2px 8px',
             borderRadius: '3px',
-            marginTop: '10px',
+            margin: '10px  6px  10px 0',
           }}
-          disabled={isSeeding}
+          disabled={isSeedingDb}
           onClick={seedDb}
         >
           Seed DB
         </button>
-        {isSeeding && <div>Loading...</div>}
+        {isSeedingDb && <Progress />}
       </div>
       <h3>Models:</h3>
       <ul>
