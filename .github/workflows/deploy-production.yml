@@ -12,9 +12,15 @@ jobs:
   deploy-production:
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+
+      - name: Migrate Database 📦
+        run: npx prisma migrate deploy
 
       - name: Deploy to Vercel - Production 🚀
         uses: amondnet/vercel-action@v25.1.0
