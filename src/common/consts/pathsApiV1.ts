@@ -1,8 +1,10 @@
 const prefixPathApi = '/api/v1';
 
+const baseUrl = process.env.NODE_ENV === 'test' ? `http://localhost:3000${prefixPathApi}` : prefixPathApi;
+
 export const pathsApiV1 = {
-  BATCHES: `${prefixPathApi}/batches`,
-  BATCHES_DETAILS: (id: string) => `${prefixPathApi}/batches/${id}`,
-  USERS: `${prefixPathApi}/users`,
-  USERS_DETAILS: (username: string) => `${prefixPathApi}/users/${username}`,
+  BATCHES: `${baseUrl}/batches`,
+  BATCHES_DETAILS: (id: string) => `${baseUrl}/batches/${id}`,
+  USERS: `${baseUrl}/users`,
+  USERS_DETAILS: (username: string) => `${baseUrl}/users/${username}`,
 } as const;
