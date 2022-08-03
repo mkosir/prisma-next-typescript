@@ -11,7 +11,7 @@ async function main() {
   await prisma.supplier.createMany({ data: suppliers });
 
   // Nested relations not supported using createMany -  https://github.com/prisma/prisma/issues/5455
-  // await prisma.batch.createMany<{ data: Prisma.BatchCreateInput[] }>({ data: batches });
+  // await prisma.batch.createMany({ data: batches });
   for (const batch of batches) {
     await prisma.batch.create({ data: batch });
   }
