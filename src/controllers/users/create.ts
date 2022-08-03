@@ -17,10 +17,8 @@ export const create = async (req: NextApiRequestExtended, res: NextApiResponse<C
       data: req.body,
     });
 
-    res.status(201).json(null);
-    return;
+    return res.status(201).json(null);
   } catch (err) {
-    res.status(400).json({ message: 'An error occurred while creating the user' });
-    return;
+    return res.status(400).json({ message: 'An error occurred while creating the user' });
   }
 };

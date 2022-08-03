@@ -14,10 +14,8 @@ export const destroy = async (req: NextApiRequestExtended, res: NextApiResponse<
       where: { id: queryParamId },
     });
 
-    res.status(200).json(null);
-    return;
+    return res.status(200).json(null);
   } catch (err) {
-    res.status(400).json({ message: 'An error occurred while deleting the batch' });
-    return;
+    return res.status(400).json({ message: 'An error occurred while deleting the batch' });
   }
 };

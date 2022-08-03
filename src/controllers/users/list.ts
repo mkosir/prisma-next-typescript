@@ -10,10 +10,8 @@ export const list = async (_req: NextApiRequest, res: NextApiResponse<ListRespon
   try {
     const users = await prisma.user.findMany();
 
-    res.status(200).json(users);
-    return;
+    return res.status(200).json(users);
   } catch (err) {
-    res.status(400).json({ message: 'An error occurred while retrieving the users' });
-    return;
+    return res.status(400).json({ message: 'An error occurred while retrieving the users' });
   }
 };

@@ -16,14 +16,11 @@ export const show = async (req: NextApiRequestExtended, res: NextApiResponse<Sho
     });
 
     if (batch === null) {
-      res.status(404).json({ message: `Batch id:'${queryParamId}' can't be found` });
-      return;
+      return res.status(404).json({ message: `Batch id:'${queryParamId}' can't be found` });
     }
 
-    res.status(200).json(batch);
-    return;
+    return res.status(200).json(batch);
   } catch (err) {
-    res.status(400).json({ message: 'An error occurred while retrieving the batch' });
-    return;
+    return res.status(400).json({ message: 'An error occurred while retrieving the batch' });
   }
 };

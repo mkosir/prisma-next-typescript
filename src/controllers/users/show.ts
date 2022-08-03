@@ -16,14 +16,11 @@ export const show = async (req: NextApiRequestExtended, res: NextApiResponse<Sho
     });
 
     if (user === null) {
-      res.status(404).json({ message: `Username '${queryParamUsername}' can't be found` });
-      return;
+      return res.status(404).json({ message: `Username '${queryParamUsername}' can't be found` });
     }
 
-    res.status(200).json(user);
-    return;
+    return res.status(200).json(user);
   } catch (err) {
-    res.status(400).json({ message: 'An error occurred while retrieving the user' });
-    return;
+    return res.status(400).json({ message: 'An error occurred while retrieving the user' });
   }
 };
