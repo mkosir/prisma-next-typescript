@@ -19,8 +19,13 @@ export const seed = async (_req: NextApiRequestExtended, res: NextApiResponse<Se
     await prisma.user.createMany({ data: users, skipDuplicates: true });
     await prisma.supplier.createMany({ data: suppliers, skipDuplicates: true });
 
+    // Nested relations not supported using createMany -  https://github.com/prisma/prisma/issues/5455
+    // await prisma.batch.createMany({ data: batches, skipDuplicates: true });
     for (const batch of batches) {
-      await prisma.batch.create({ data: batch });
+      const existingBatch = await prisma.batch.findUnique({ where: { id: batch.id } });
+      if (existingBatch) {
+        await prisma.batch.create({ data: batch });
+      }
     }
 
     return res.status(201).json(null);
