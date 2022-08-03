@@ -1,5 +1,5 @@
 const clientBase = async <T>(path: string, config: RequestInit): Promise<{ response: Response; data: T }> => {
-  const request = new Request(`${process.env.NEXT_PUBLIC_BASE_URL}${path}`, config);
+  const request = new Request(path, config);
   const response = await fetch(request);
   const data: T = await response.json();
 
