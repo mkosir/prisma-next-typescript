@@ -13,13 +13,10 @@ export interface NextApiRequestExtended extends NextApiRequest {
 export default async function handler(req: NextApiRequestExtended, res: NextApiResponse<UsersResponse>) {
   switch (req.method) {
     case 'GET':
-      show(req, res);
-      return;
+      return show(req, res);
     case 'DELETE':
-      destroy(req, res);
-      return;
+      return destroy(req, res);
     default:
-      res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
-      return;
+      return res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
   }
 }

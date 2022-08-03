@@ -8,13 +8,10 @@ type UsersResponse = ListResponse | CreateResponse;
 export default async function handler(req: NextApiRequest, res: NextApiResponse<UsersResponse>) {
   switch (req.method) {
     case 'GET':
-      list(req, res);
-      return;
+      return list(req, res);
     case 'POST':
-      create(req, res);
-      return;
+      return create(req, res);
     default:
-      res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
-      return;
+      return res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
   }
 }
