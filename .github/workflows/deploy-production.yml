@@ -10,6 +10,10 @@ jobs:
   deploy-production:
     runs-on: ubuntu-latest
 
+    environment:
+      name: production
+      url: https://prisma-next-typescript-boilerplate.vercel.app/
+
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
 
