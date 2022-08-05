@@ -4,7 +4,7 @@ import Head from 'next/head';
 import 'common/styles/globals.css';
 import { Breadcrumbs } from 'common/components';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -22,4 +22,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default MyApp;
+export default App;
