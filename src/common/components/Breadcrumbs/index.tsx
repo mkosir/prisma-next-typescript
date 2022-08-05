@@ -6,7 +6,7 @@ export const Breadcrumbs = () => {
   const { breadcrumbs } = useCreateBreadcrumbs();
 
   return (
-    <>
+    <div>
       {breadcrumbs.map((breadcrumb, index) => (
         <Breadcrumb
           key={breadcrumb.text}
@@ -16,7 +16,7 @@ export const Breadcrumbs = () => {
           isLast={index === breadcrumbs.length - 1}
         />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -21,8 +21,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <img src="/heisenberg.png" alt="heisenberg" width={85} />
         <div style={{ fontSize: '22px', fontWeight: 'bold' }}>Minimal boilerplate - Prisma / Next.js / TypeScript</div>
       </div>
-      <Breadcrumbs />
-      {isPageLoading ? <Progress /> : <Component {...pageProps} />}
+      <div style={{ display: 'flex' }}>
+        <Breadcrumbs />
+        {isPageLoading && <Progress size="lg" style={{ marginLeft: '7px' }} />}
+      </div>
+      {!isPageLoading && <Component {...pageProps} />}
     </>
   );
 };
