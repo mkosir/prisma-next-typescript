@@ -1,32 +1,14 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Router from 'next/router';
-import { useEffect, useState } from 'react';
 
 import { Breadcrumbs, Progress } from 'common/components';
+
+import { usePageLoading } from './usePageLoading';
 
 import 'common/styles/globals.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const [isPageLoading, setIsPageLoading] = useState(false);
-
-  useEffect(() => {
-    const routeEventStart = () => {
-      setIsPageLoading(true);
-    };
-    const routeEventEnd = () => {
-      setIsPageLoading(false);
-    };
-
-    Router.events.on('routeChangeStart', routeEventStart);
-    Router.events.on('routeChangeComplete', routeEventEnd);
-    Router.events.on('routeChangeError', routeEventEnd);
-    return () => {
-      Router.events.off('routeChangeStart', routeEventStart);
-      Router.events.off('routeChangeComplete', routeEventEnd);
-      Router.events.off('routeChangeError', routeEventEnd);
-    };
-  }, []);
+  const { isPageLoading } = usePageLoading();
 
   return (
     <>
