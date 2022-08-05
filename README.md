@@ -44,11 +44,11 @@ Visit [localhost:3000](http://localhost:3000/)
 
 All contributions are welcome!
 
-[build-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/build.yml/badge.svg
-[build-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/build.yml
-[test-be-integration-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/test-be-integration.yml/badge.svg
-[test-be-integration-url]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/test-be-integration.yml
-[deploy-production-badge]: https://github.com/mkosir/prisma-next-typescript-boilerplate/actions/workflows/deploy-production.yml/badge.svg
-[deploy-production-url]: https://prisma-next-typescript-boilerplate.vercel.app
+[build-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/build.yml
+[test-be-integration-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/test-be-integration.yml/badge.svg
+[test-be-integration-url]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/test-be-integration.yml
+[deploy-production-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/deploy-production.yml/badge.svg
+[deploy-production-url]: https://prisma-next-typescript.vercel.app
 [typescript-badge]: https://badges.frapsoft.com/typescript/code/typescript.svg?v=101
 [typescript-url]: https://github.com/microsoft/TypeScript
