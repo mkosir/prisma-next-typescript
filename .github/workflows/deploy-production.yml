@@ -13,7 +13,7 @@ jobs:
 
     environment:
       name: production
-      url: https://prisma-next-typescript-boilerplate.vercel.app/
+      url: https://prisma-next-typescript.vercel.app/
 
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL_PROD }}
