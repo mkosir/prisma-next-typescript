@@ -2,8 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import { Breadcrumbs, Progress } from 'common/components';
-
-import { usePageLoading } from './usePageLoading';
+import { usePageLoading } from 'common/utils/usePageLoading';
 
 import 'common/styles/globals.css';
 
