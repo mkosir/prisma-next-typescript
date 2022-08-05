@@ -3,8 +3,7 @@ import { Prisma } from '@prisma/client';
 export const userIdWalterWhite = '1f008731-4645-43de-8af9-3060d4086001';
 export const userIdJessePinkman = '1f008731-4645-43de-8af9-3060d4086002';
 
-const baseImageUrl =
-  'https://raw.githubusercontent.com/mkosir/prisma-next-typescript-boilerplate/main/misc/user-images';
+const baseImageUrl = 'https://raw.githubusercontent.com/mkosir/prisma-next-typescript/main/misc/user-images';
 
 export const users: Array<Prisma.UserCreateInput> = [
   {
