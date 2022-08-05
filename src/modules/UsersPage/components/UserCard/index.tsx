@@ -1,8 +1,9 @@
 import { Prisma } from '@prisma/client';
 import Router from 'next/router';
+import { useState } from 'react';
 import Tilt from 'react-parallax-tilt';
 
-import { Link } from 'common/components';
+import { Link, Progress } from 'common/components';
 import { paths } from 'common/consts/paths';
 import { pathsApiV1 } from 'common/consts/pathsApiV1';
 import { ResponseError } from 'common/types/apiV1';
@@ -19,6 +20,8 @@ export type UserCardProps = {
 };
 
 export const UserCard = ({ user }: UserCardProps) => {
+  const [isDeletingUser, setIsDeletingUser] = useState<boolean>(false);
+
   const purities = user.batches.map((batch) => batch.purity);
   const purityBest = purities.length ? `${Prisma.Decimal.max(...purities).toNumber()}%` : '-';
   const purityAverage = purities.length
@@ -26,7 +29,9 @@ export const UserCard = ({ user }: UserCardProps) => {
     : '-';
 
   const handleUserDelete = async (username: string) => {
+    setIsDeletingUser(true);
     await client.delete<null | ResponseError>(pathsApiV1.USERS_DETAILS(username));
+    setIsDeletingUser(false);
 
     Router.push(paths.USERS);
   };
@@ -77,17 +82,24 @@ export const UserCard = ({ user }: UserCardProps) => {
             Details
           </Link>
           <div
-            role="button"
-            tabIndex={0}
-            onClick={() => handleUserDelete(user.username)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleUserDelete(user.username);
-              }
+            style={{
+              display: 'flex',
             }}
-            className={styles.deleteButton}
           >
-            Delete
+            {isDeletingUser && <Progress />}
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => handleUserDelete(user.username)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleUserDelete(user.username);
+                }
+              }}
+              className={styles.deleteButton}
+            >
+              Delete
+            </div>
           </div>
         </div>
       </div>

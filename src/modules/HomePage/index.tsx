@@ -36,7 +36,7 @@ export const HomePage = () => {
         >
           Seed DB
         </button>
-        {isSeedingDb && <Progress />}
+        {isSeedingDb && <Progress size="lg" />}
       </div>
       <h3>Models:</h3>
       <ul>

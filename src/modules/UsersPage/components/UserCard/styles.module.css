@@ -1,5 +1,6 @@
 .deleteButton {
   font-size: 14px;
+  margin-left: 5px;
   cursor: pointer;
   text-decoration: none;
   color: var(--color-blue-sky-400);

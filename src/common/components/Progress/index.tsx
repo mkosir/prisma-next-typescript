@@ -10,6 +10,6 @@ type ProgressProps = {
 export const Progress = ({ size = 'sm', style }: ProgressProps) => (
   <div
     className={styles.progress}
-    style={{ width: size === 'sm' ? '20px' : '30px', height: size === 'sm' ? '20px' : '30px', ...style }}
+    style={{ width: size === 'sm' ? '15px' : '20px', height: size === 'sm' ? '15px' : '20px', ...style }}
   ></div>
 );
