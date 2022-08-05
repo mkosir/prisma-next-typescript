@@ -1,5 +1,5 @@
 {
-  "name": "prisma-next-typescript-boilerplate",
+  "name": "prisma-next-typescript",
   "description": "Minimal RESTful API boilerplate with Prisma, Next.js and TypeScript",
   "version": "0.0.0-development",
   "scripts": {
@@ -32,7 +32,7 @@
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-parallax-tilt": "^1.7.50"
+    "react-parallax-tilt": "^1.7.51"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
