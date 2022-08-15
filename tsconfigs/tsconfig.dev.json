@@ -1,4 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["../."]
+  // Files and folders starting with a . are ignored by the glob patterns
+  "include": ["../.", "../.commitlintrc.ts"]
 }
