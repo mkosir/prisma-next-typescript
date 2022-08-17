@@ -32,7 +32,7 @@ export const HomePage = () => {
             margin: '10px  6px  10px 0',
           }}
           disabled={isSeedingDb}
-          onClick={void seedDb()}
+          onClick={void seedDb}
         >
           Seed DB
         </button>
