@@ -12,6 +12,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     case 'POST':
       return create(req, res);
     default:
-      return res.status(405).json({ message: `HTTP method ${req.method} not allowed` });
+      return res.status(405).json({ message: `HTTP method ${req.method ?? 'unknown'} not allowed` });
   }
 }
