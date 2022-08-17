@@ -30,7 +30,7 @@ Visit [localhost:3000](http://localhost:3000/)
 ## Features:
 
 - [Prisma v4](https://www.prisma.io/) ORM
-- [TypeScript v4](https://github.com/microsoft/TypeScript) codebase
+- [TypeScript v4](https://github.com/microsoft/TypeScript) codebase with [Strict Configuration](https://typescript-eslint.io/docs/linting/configs#strict)
 - [NextJs](https://github.com/vercel/next.js) RESTful API
 - Unit and integration tests with [Jest](https://github.com/facebook/jest)
 - Easily start local development using [Docker Compose](https://docs.docker.com/compose/) by spinning up seeded database `npm run db-start` (default credentials `user=walter`, `password=white` [.env file](./envs/dev.env))
