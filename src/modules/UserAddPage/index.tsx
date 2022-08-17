@@ -11,7 +11,10 @@ export const UserAddPage = () => {
   return (
     <div>
       <h3>➕ Add User</h3>
-      <form onSubmit={(event) => handleUserCreate(event as AddUserFormEvent, setError)} style={{ maxWidth: '200px' }}>
+      <form
+        onSubmit={(event) => void handleUserCreate(event as AddUserFormEvent, setError)}
+        style={{ maxWidth: '200px' }}
+      >
         <Input id="email" label="*Email:" />
         <Input id="name" label="*Name:" />
         <Input id="username" label="*Username:" />

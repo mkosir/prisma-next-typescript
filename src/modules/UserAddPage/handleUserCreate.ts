@@ -50,7 +50,7 @@ export const handleUserCreate = async (event: AddUserFormEvent, setError: Dispat
     return;
   }
 
-  Router.push(paths.USERS);
+  await Router.push(paths.USERS);
 };
 
 const minimalInputValidation = (formElements: FormElements): boolean => {

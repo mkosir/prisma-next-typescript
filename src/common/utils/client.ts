@@ -1,7 +1,7 @@
 const clientBase = async <T>(path: string, config: RequestInit): Promise<{ response: Response; data: T }> => {
   const request = new Request(path, config);
   const response = await fetch(request);
-  const data: T = await response.json();
+  const data = (await response.json()) as T;
 
   return { response, data };
 };

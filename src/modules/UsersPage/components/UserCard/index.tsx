@@ -33,7 +33,7 @@ export const UserCard = ({ user }: UserCardProps) => {
     await client.delete<null | ResponseError>(pathsApiV1.USERS_DETAILS(username));
     setIsDeletingUser(false);
 
-    Router.push(paths.USERS);
+    await Router.push(paths.USERS);
   };
 
   return (
@@ -90,10 +90,10 @@ export const UserCard = ({ user }: UserCardProps) => {
             <div
               role="button"
               tabIndex={0}
-              onClick={() => handleUserDelete(user.username)}
+              onClick={() => void handleUserDelete(user.username)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
-                  handleUserDelete(user.username);
+                  void handleUserDelete(user.username);
                 }
               }}
               className={styles.deleteButton}
