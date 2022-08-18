@@ -22,8 +22,8 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      # - name: Migrate Database 📦
-      #   run: npx prisma migrate deploy
+      - name: Migrate Database 📦
+        run: npx prisma migrate deploy
 
       - name: Deploy to Vercel - Production 🚀
         uses: amondnet/vercel-action@v25.1.0
