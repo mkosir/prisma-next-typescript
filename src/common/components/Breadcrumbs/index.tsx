@@ -49,7 +49,7 @@ const useCreateBreadcrumbs = (): { breadcrumbs: ReadonlyArray<{ href: string; te
   const pathNames = pathName.split('/').filter((pathNameSplitted) => pathNameSplitted.length > 0);
 
   const breadcrumbs = pathNames.map((pathName, index) => {
-    const href = '/' + pathNames.slice(0, index + 1).join('/');
+    const href = `/${pathNames.slice(0, index + 1).join('/')}`;
     return { href, text: pathName };
   });
 
