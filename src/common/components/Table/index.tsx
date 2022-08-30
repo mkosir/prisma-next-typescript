@@ -14,8 +14,8 @@ export const Table = ({ trHead, trData }: TableProps) => {
         <tr className={styles.row}>{trHead}</tr>
       </thead>
       <tbody>
-        {trData.map((trItem, i) => (
-          <tr key={i} className={styles.row}>
+        {trData.map((trItem, idx) => (
+          <tr key={idx} className={styles.row}>
             {trItem}
           </tr>
         ))}

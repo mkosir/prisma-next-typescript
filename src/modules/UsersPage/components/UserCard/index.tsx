@@ -91,8 +91,8 @@ export const UserCard = ({ user }: UserCardProps) => {
               role="button"
               tabIndex={0}
               onClick={() => void handleUserDelete(user.username)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
+              onKeyDown={(err) => {
+                if (err.key === 'Enter') {
                   void handleUserDelete(user.username);
                 }
               }}
