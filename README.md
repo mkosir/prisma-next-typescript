@@ -1,5 +1,7 @@
 # Prisma / Next.js / TypeScript boilerplate ![Heisenberg](misc/heisenberg.png)
 
+[![CI][lint-badge]][lint-url]
+[![CI][tsc-badge]][tsc-url]
 [![CI][build-badge]][build-url]
 [![CI][test-be-integration-badge]][test-be-integration-url]
 [![CI][deploy-production-badge]][deploy-production-url]
@@ -44,6 +46,10 @@ Visit [localhost:3000](http://localhost:3000/)
 
 All contributions are welcome!
 
+[lint-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/lint.yml/badge.svg
+[lint-url]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/lint.yml
+[tsc-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/tsc.yml/badge.svg
+[tsc-url]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/tsc.yml
 [build-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/build.yml/badge.svg
 [build-url]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/build.yml
 [test-be-integration-badge]: https://github.com/mkosir/prisma-next-typescript/actions/workflows/test-be-integration.yml/badge.svg
