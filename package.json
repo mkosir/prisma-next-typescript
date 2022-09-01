@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "prepare": "husky install",
-    "lint": "eslint --max-warnings 0 . && npm run tsc",
+    "lint": "eslint --max-warnings 0 .",
     "lint-fix": "eslint --fix .",
     "lint-staged-husky": "lint-staged",
     "tsc": "tsc -p tsconfigs/tsconfig.dev.json",
