@@ -9,6 +9,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "strict": true,
+    "strictNullChecks": true,
     "pretty": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
